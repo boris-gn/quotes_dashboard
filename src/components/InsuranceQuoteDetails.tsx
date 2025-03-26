@@ -14,7 +14,7 @@ import withContainer from '../hocs/Container';
 const InsuranceQuoteDetails: React.FC = () => {
 	return (
 		<>
-			<div className="flex items-start space-x-12">
+			<div className="flex items-start space-x-12 flex-wrap">
 				<div className="flex-1 space-y-6">
 					<PersonalDetailsCard />
 					<ContactInformationCard />

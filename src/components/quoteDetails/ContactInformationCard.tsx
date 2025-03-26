@@ -1,16 +1,12 @@
 import React from 'react';
+import CardTitle from './CartTitle';
 
 const ContactInformationCard: React.FC = () => {
 	return (
-		<div className="bg-white border border-neutral-200 rounded-lg p-3">
-			<div className="flex items-center justify-between mb-3">
-				<h2 className="text-brand-primary font-bold text-base">
-					Contact Information
-				</h2>
-				<hr className="flex-grow mx-3 border-neutral-200" />
-			</div>
-			<div className="space-y-2">
-				<div className="flex items-center gap-2">
+		<div className="bg-white text-left">
+			<CardTitle title="Contact Information" />
+			<div className="space-y-2  min-w-[385px]">
+				<div className="flex gap-2 px-3">
 					<span className="text-brand-primary font-bold text-xs w-24">
 						Mobile Phone:
 					</span>
@@ -18,7 +14,7 @@ const ContactInformationCard: React.FC = () => {
 						+1 123 456 7890
 					</span>
 				</div>
-				<div className="flex items-center gap-2">
+				<div className="flex gap-2 px-3">
 					<span className="text-brand-primary font-bold text-xs w-24">
 						Home Phone:
 					</span>
@@ -26,7 +22,7 @@ const ContactInformationCard: React.FC = () => {
 						+1 123 456 7890
 					</span>
 				</div>
-				<div className="flex items-center gap-2">
+				<div className="flex gap-2 px-3">
 					<span className="text-brand-primary font-bold text-xs w-24">
 						Email:
 					</span>
@@ -34,7 +30,7 @@ const ContactInformationCard: React.FC = () => {
 						Theresa@email.com
 					</span>
 				</div>
-				<div className="flex items-center gap-2">
+				<div className="flex gap-2 px-3">
 					<span className="text-brand-primary font-bold text-xs w-24">
 						Address:
 					</span>
