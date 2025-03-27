@@ -3,7 +3,7 @@ import withContainer from './Container';
 const CalendarContainer: React.FC = () => {
 
 	return (
-		<div>
+		<div className=''>
 			Calendar
 		</div>
 	);

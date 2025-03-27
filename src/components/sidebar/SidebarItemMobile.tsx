@@ -16,7 +16,7 @@ const SidebarItemMobile: React.FC<SidebarItemProps> = ({
 	className = '',
 }) => {
 	return (
-		<div className="list-none mb-7 relative min-w-11">
+		<div className="list-none relative min-w-11">
 			<Link
 				to={to}
 				className={`${active ? 'absolute left-1/2 transform -translate-x-1/2 -top-3' : ''} ${className} flex flex-col items-center gap-2.5 p-2 justify-center`}

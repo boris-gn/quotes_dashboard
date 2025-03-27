@@ -7,8 +7,8 @@ const Quotes = () => {
 	return (
 		<div className='overflow-x-auto w-full'>
 			<div className='flex flex-col md:flex-row gap-4 mb-4'>
-				<QuotesCalendarContainer />
-				<QuotesChartContainer />
+				<QuotesChartContainer className='md:w-2/3 ' />
+				<QuotesCalendarContainer className='md:w-1/3' />
 			</div>
 			<EnhancedQuotesTable className='relative' loading={false} quotes={quotes} />
 		</div>

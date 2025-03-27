@@ -20,7 +20,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 				!loading && 'hover:bg-gray-10'
 			} bg-white items-center h-[40px]`}
 		>
-			{/* Quote ID */}
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
@@ -29,7 +28,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 				)}
 			</td>
 
-			{/* Client Name */}
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-24 bg-gray-200 animate-pulse rounded"></div>
@@ -38,7 +36,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 				)}
 			</td>
 
-			{/* Type */}
 			<td>
 				{loading ? (
 					<div className="h-6 w-12 bg-gray-200 animate-pulse rounded-full"></div>
@@ -47,7 +44,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 				)}
 			</td>
 
-			{/* Status */}
 			<td>
 				{loading ? (
 					<div className="h-6 w-12 bg-gray-200 animate-pulse rounded-full"></div>
@@ -56,7 +52,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 				)}
 			</td>
 
-			{/* Premium Amount */}
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
@@ -65,7 +60,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 				)}
 			</td>
 
-			{/* Expire Date */}
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
@@ -74,7 +68,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 				)}
 			</td>
 
-			{/* Last Updated */}
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
@@ -83,7 +76,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 				)}
 			</td>
 
-			{/* Actions */}
 			<td>
 				{loading ? (
 					<div className="h-6 w-16 bg-gray-200 animate-pulse rounded"></div>

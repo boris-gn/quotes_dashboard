@@ -4,6 +4,7 @@
 			"customerId": "CUST-34256",
 			"fullName": "Theresa Heidenreich",
 			"gender": "Male",
+			"photo": "src/assets/photos/photo.png",
 			"occupation": "Marketing Manager",
 			"contactInformation": {
 				"mobilePhone": "+1 123 456 7890",

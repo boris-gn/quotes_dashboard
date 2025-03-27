@@ -1,22 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
-import EditIcon from '../assets/icons/edit.svg?react';
-import MailIcon from '../assets/icons/mail.svg?react';
-import AddIcon from '../assets/icons/node-add.svg?react';
-import ReminderIcon from '../assets/icons/reminder.svg?react';
-import DownloadIcon from '../assets/icons/download.svg?react';
 import ArrowIcon from '../assets/icons/arrow-left.svg?react';
+import { useAppSelector } from '../hooks/useRedux';
+import { PersonalDetails } from '../../data/quotesData';
 
 const Dropdown: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
+	const data: PersonalDetails | undefined = useAppSelector(state => state.quote.data?.personalDetails);
 
-	const dropdownItems = [
-		{ icon: EditIcon, label: 'Update details' },
-		{ icon: AddIcon, label: 'Add Follow-Up' },
-		{ icon: MailIcon, label: 'Send Mail' },
-		{ icon: ReminderIcon, label: 'Send Reminder' },
-		{ icon: DownloadIcon, label: 'Download Quote' },
-	];
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
@@ -45,37 +36,14 @@ const Dropdown: React.FC = () => {
 				aria-expanded={isOpen}
 				aria-haspopup="true"
 			>
-				<div className="mr-2 w-10 h-10 md:w-6 md:h-6 rounded-full bg-gray-200" />
-				<div className="mr-10 hidden md:block">Boris Gevorgyan</div>
+				<div className="mr-2 w-10 h-10 md:w-6 md:h-6 rounded-full bg-gray-200 overflow-hidden" >
+					<img alt={data?.fullName} src={data?.photo}/>
+				</div>
+				<div className="mr-10 hidden md:block">{data?.fullName}</div>
 				<ArrowIcon
 					className={`w-4 h-4 !hidden md:block ${isOpen ? 'rotate-90' : 'rotate-270'}`}
 				/>
 			</button>
-
-			{isOpen && (
-				<div className="absolute right-0 mt-2 border border-gray-200 rounded-8 bg-white p-3">
-					{dropdownItems.map((item, index) => (
-						<div
-							className="origin-top-right bg-white ring-1z-10 hover:bg-neutral-100"
-							tabIndex={-1}
-							key={index}
-						>
-							<button
-								type="button"
-								className="cursor-pointer flex items-center gap-2 w-full p-3 text-sm text-brand-primary text-12 border-b border-gray-200"
-								role="menuitem"
-								onClick={() => {
-									alert('Send Remainder clicked');
-									setIsOpen(false);
-								}}
-							>
-								{<item.icon />}
-								{item.label}
-							</button>
-						</div>
-					))}
-				</div>
-			)}
 		</div>
 	);
 };

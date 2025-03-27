@@ -56,14 +56,17 @@ export interface SupportingDocuments {
 	reg: string;
 }
 
+export interface PersonalDetails {
+	customerId: string;
+	fullName: string;
+	photo?: string;
+	gender: string;
+	occupation: string;
+	contactInformation: ContactInformation;
+}
+
 export interface IQuotesData {
-	personalDetails: {
-		customerId: string;
-		fullName: string;
-		gender: string;
-		occupation: string;
-		contactInformation: ContactInformation;
-	};
+	personalDetails: PersonalDetails;
 	policyInformation: PolicyInformation;
 	customerHistory: CustomerHistory[];
 	quoteStatus: string;

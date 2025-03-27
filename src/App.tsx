@@ -30,10 +30,10 @@ const App = () => {
 
 				{/* Main Content */}
 				<div className="flex gap-4 flex-col overflow-hidden w-full">
-					<div className="flex overflow-hidden justify-between">
+					<div className=" md:flex md:overflow-hidden md:justify-between md:relative fixed top-0 left-0 right-0 bg-white px-5 pt-5 pb-4">
 						<Header />
 					</div>
-					<SearchInput className="md:hidden" />
+					<SearchInput className="md:mt-0 mt-14 md:hidden" />
 
 					<div className="md:hidden block">
 						<h1 className="text-24 text-brand-primary font-bold racking-minus-1 leading-117 mb-0.5">
