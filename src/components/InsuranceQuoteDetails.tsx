@@ -44,26 +44,31 @@ const actions = [
 const InsuranceQuoteDetails: React.FC = () => {
 	return (
 		<>
-			<div className="flex items-start flex-wrap min-h-[656px] max-w-[975px]">
-				<div className="flex-1">
+			<div className="flex flex-col md:flex-row items-stretch min-h-[656px] max-w-[975px]">
+				{/* Left Column */}
+				<div className="pr-10 w-full md:w-[360px] flex flex-col gap-4">
 					<PersonalDetailsCard />
 					<ContactInformationCard />
 					<PolicyInformationCard />
 					<CustomerHistoryCard />
 				</div>
-				<div className="flex-1 h-full">
-					<div className='border-x border-gray-200 px-[48px] h-full max-w-[350px]'>
-						<QuoteStatusCard />
-						<QuoteBreakdownCard />
-						<ExpirationDatesCard />
-						<SupportingDocumentsCard />
-					</div>
+
+				{/* Middle Column */}
+				<div className="border-x border-gray-200 px-[48px] w-full md:max-w-[350px] flex flex-col gap-4">
+					<QuoteStatusCard />
+					<QuoteBreakdownCard />
+					<ExpirationDatesCard />
+					<SupportingDocumentsCard />
 				</div>
-				<div>
+
+				{/* Right Column */}
+				<div className="w-full md:w-[315px] px-12 flex flex-col">
 					<ActivityLogCard />
 				</div>
-			</div>
-			<div className="mt-6"><ActionButtons actions={actions} /></div>
+				</div>
+
+			<div className="mt-8"><ActionButtons actions={actions} /></div>
+
 		</>
 	);
 };

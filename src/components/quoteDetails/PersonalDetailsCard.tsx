@@ -24,7 +24,7 @@ const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = () => {
 						<EditIcon />
 					</div>
 				</div>
-				<div className="flex-1 space-y-2 text-left min-w-[200px]">
+				<div className="flex-1 space-y-2 text-left ">
 					<div className="flex gap-2">
 						<span className="text-brand-primary font-bold text-xs">
 							Customer ID:

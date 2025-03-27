@@ -7,20 +7,20 @@ const CustomerHistoryCard: React.FC = () => {
 		<div className="bg-white">
 			<CardTitle title="Customer History" />
 
-			<div className="space-y-2 text-left max-w-[350px]">
-				<div className="flex items-center justify-between">
+			<div className="space-y-4 text-left">
+				<div className="flex items-center">
 					<span className="text-brand-primary font-bold text-xs">
 						Previous Policies:
 					</span>
 				</div>
-				<div className="flex items-center justify-between">
-					<span className="text-brand-primary text-xs">
+				<div className="flex items-center">
+					<span className="text-brand-primary text-[10px]">
 						Policy #P-20231011-002 (Health Insurance):
 					</span>
 					<StatusBadge isFilled status="Active" />
 				</div>
-				<div className="flex items-center justify-between ">
-					<span className="text-brand-primary text-xs">
+				<div className="flex items-center">
+					<span className="text-brand-primary text-[10px]">
 						Policy #P-20230905-001 (Home Insurance):
 					</span>
 					<StatusBadge isFilled status="Expired" />
