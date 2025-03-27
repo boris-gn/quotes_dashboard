@@ -3,7 +3,7 @@ import CardTitle from './CartTitle';
 import { PolicyInformation } from '../../../data/quotesData';
 
 type PolicyInformationCardProps = {
-	policyInfo: PolicyInformation;
+	policyInfo?: PolicyInformation;
 };
 
 const PolicyInformationCard: React.FC<PolicyInformationCardProps> = ({
@@ -18,7 +18,7 @@ const PolicyInformationCard: React.FC<PolicyInformationCardProps> = ({
 						Policy Type:
 					</span>
 					<span className="text-brand-primary text-xs">
-						{policyInfo.policyType}
+						{policyInfo?.policyType}
 					</span>
 				</div>
 				<div className="px-[14px]">
@@ -26,7 +26,7 @@ const PolicyInformationCard: React.FC<PolicyInformationCardProps> = ({
 						Policy Description:
 					</span>
 					<span className="text-brand-primary text-xs">
-						{policyInfo.policyDescription}
+						{policyInfo?.policyDescription}
 					</span>
 				</div>
 				<div className="px-3">
@@ -34,7 +34,7 @@ const PolicyInformationCard: React.FC<PolicyInformationCardProps> = ({
 						Coverage Amount:
 					</span>
 					<span className="text-brand-primary text-xs">
-						{policyInfo.coverageAmount}
+						{policyInfo?.coverageAmount}
 					</span>
 				</div>
 				<div className="px-3  mb-[24px]">
@@ -42,7 +42,7 @@ const PolicyInformationCard: React.FC<PolicyInformationCardProps> = ({
 						Deductible:
 					</span>
 					<span className="text-brand-primary text-xs">
-						{policyInfo.policyDescription}
+						{policyInfo?.policyDescription}
 					</span>
 				</div>
 			</div>

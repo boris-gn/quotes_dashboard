@@ -4,7 +4,7 @@ import StatusBadge from '../StatusBadge';
 import { CustomerHistory } from '../../../data/quotesData';
 
 type CustomerHistoryCardProps = {
-	history: CustomerHistory[];
+	history?: CustomerHistory[];
 };
 
 const CustomerHistoryCard: React.FC<CustomerHistoryCardProps> = ({
@@ -20,7 +20,7 @@ const CustomerHistoryCard: React.FC<CustomerHistoryCardProps> = ({
 						Previous Policies:
 					</span>
 				</div>
-				{history.map((historyItem) => {
+				{history?.map((historyItem) => {
 					return (
 						<div key={historyItem.policyId}>
 							<div className="flex">
@@ -29,7 +29,7 @@ const CustomerHistoryCard: React.FC<CustomerHistoryCardProps> = ({
 								</span>
 								<StatusBadge isFilled status="Active" />
 							</div>
-							<div className="flex-col sm:flex-row flex sm:items-center">
+							<div className="flex-col md:flex-row flex md:items-center">
 								<span className="text-brand-primary text-[10px]">
 									{historyItem.type}
 								</span>

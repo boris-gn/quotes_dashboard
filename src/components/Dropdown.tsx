@@ -37,18 +37,18 @@ const Dropdown: React.FC = () => {
 	};
 
 	return (
-		<div className="relative w-fit" ref={dropdownRef}>
+		<div className="relative" ref={dropdownRef}>
 			<button
 				onClick={toggleDropdown}
 				type="button"
-				className="flex items-center w-fit rounded-8 border border-gray-200 px-4 py-3 bg-white text-12 font-medium text-gray-500 hover:bg-gray-50 leading-133"
+				className="flex items-center w-fit rounded-8 md:border border-gray-200 px-0 md:px-4 md:py-3 bg-white text-12 font-medium text-gray-500 hover:bg-gray-50 leading-133"
 				aria-expanded={isOpen}
 				aria-haspopup="true"
 			>
-				<div className="mr-2 w-6 h-6 rounded-full bg-gray-200" />
-				<div className="mr-10">Boris Gevorgyan</div>
+				<div className="mr-2 w-10 h-10 md:w-6 md:h-6 rounded-full bg-gray-200" />
+				<div className="mr-10 hidden md:block">Boris Gevorgyan</div>
 				<ArrowIcon
-					className={`w-4 h-4 ${isOpen ? 'rotate-90' : 'rotate-270'}`}
+					className={`w-4 h-4 !hidden md:block ${isOpen ? 'rotate-90' : 'rotate-270'}`}
 				/>
 			</button>
 

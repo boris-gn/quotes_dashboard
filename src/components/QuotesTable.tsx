@@ -5,6 +5,7 @@ import { QuoteColumnHeaders } from './QuoteColumnHeaders';
 import { QuoteRow } from './QuoteTableRow';
 import { QuotePagination } from './QuotePagination';
 import withContainer from './Container';
+import TableSingleItem from './TableSingleItem';
 
 interface QuotesTableProps {
 	quotes: Quote[];
@@ -21,9 +22,11 @@ const QuotesTable: React.FC<QuotesTableProps> = ({ quotes, loading }) => {
 	);
 
 	return (
-		<div>
+		<>
 			<QuoteHeader title="Quotes" />
-			<div className="overflow-x-auto pb-1.5">
+			<div className='block md:hidden border-b border-gray-100 absolute left-0 right-0' />
+			<TableSingleItem className='mt-8 md:hidden block' />
+			<div className="hidden md:block overflow-x-auto pb-1.5">
 				<table className="w-full !border-separate !border-spacing-y-3">
 					<QuoteColumnHeaders />
 					<tbody>
@@ -39,11 +42,12 @@ const QuotesTable: React.FC<QuotesTableProps> = ({ quotes, loading }) => {
 				</table>
 			</div>
 			<QuotePagination
+				className='hidden md:flex'
 				currentPage={currentPage}
 				totalPages={Math.ceil((quotes?.length || 0) / itemsPerPage)}
 				onPageChange={setCurrentPage}
 			/>
-		</div>
+		</>
 	);
 };
 

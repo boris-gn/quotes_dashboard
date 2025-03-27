@@ -4,12 +4,12 @@ import CardTitle from './CartTitle';
 import { ContactInformation } from '../../../data/quotesData';
 
 type PersonalDetailsCardProps = {
-	details: {
-		customerId: string;
-		fullName: string;
-		gender: string;
-		occupation: string;
-		contactInformation: ContactInformation;
+	details?: {
+		customerId?: string;
+		fullName?: string;
+		gender?: string;
+		contactInformation?: ContactInformation;
+		occupation?: string;
 	};
 };
 

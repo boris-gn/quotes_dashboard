@@ -3,7 +3,7 @@ import CardTitle from './CartTitle';
 import { ContactInformation } from '../../../data/quotesData';
 
 type ContactInformationCardProps = {
-	contactInfo: ContactInformation;
+	contactInfo?: ContactInformation;
 };
 
 const ContactInformationCard: React.FC<ContactInformationCardProps> = ({
@@ -18,7 +18,7 @@ const ContactInformationCard: React.FC<ContactInformationCardProps> = ({
 						Mobile Phone:
 					</span>
 					<span className="text-brand-primary text-xs">
-						{contactInfo.mobilePhone}
+						{contactInfo?.mobilePhone}
 					</span>
 				</div>
 				<div className="px-[14px]">
@@ -26,7 +26,7 @@ const ContactInformationCard: React.FC<ContactInformationCardProps> = ({
 						Home Phone:
 					</span>
 					<span className="text-brand-primary text-xs">
-						{contactInfo.homePhone}
+						{contactInfo?.homePhone}
 					</span>
 				</div>
 				<div className="px-[14px]">
@@ -34,7 +34,7 @@ const ContactInformationCard: React.FC<ContactInformationCardProps> = ({
 						Email:
 					</span>
 					<span className="text-brand-primary text-xs">
-						{contactInfo.email}
+						{contactInfo?.email}
 					</span>
 				</div>
 				<div className="px-[14px] mb-[24px]">
@@ -42,7 +42,7 @@ const ContactInformationCard: React.FC<ContactInformationCardProps> = ({
 						Address:
 					</span>
 					<span className="text-brand-primary text-xs">
-						{contactInfo.address}
+						{contactInfo?.address}
 					</span>
 				</div>
 			</div>

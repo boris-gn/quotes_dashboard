@@ -7,15 +7,22 @@ interface IQuoteBreakdownCard {
 }
 
 const QuoteBreakdownCard: React.FC<IQuoteBreakdownCard> = ({ breakdown }) => {
-	return (
-		breakdown && (
-			<div className="bg-white min-w-auto sm:min-w-[280px]">
-				<CardTitle title="Quote Breakdown" />
+	if (!breakdown) {
+		return null;
+	}
 
-				<div className="space-y-2 text-left pl-3">
-					<div className="flex">
-						<span className="text-brand-primary font-bold text-xs">
-							Premium Amount:
+	return (
+		<div className="bg-white min-w-auto md:min-w-[280px]">
+			<CardTitle title="Quote Breakdown" />
+
+			<div className="space-y-2 text-left pl-3">
+				<div className="flex">
+					<span className="text-brand-primary font-bold text-xs">
+						Premium Amount:
+					</span>
+					<div className="flex gap-1 pl-1">
+						<span className="text-brand-primary text-xs font-bold">
+							$120
 						</span>
 						<div className="flex gap-1 pl-1">
 							<span className="text-brand-primary text-xs font-bold">
@@ -87,7 +94,7 @@ const QuoteBreakdownCard: React.FC<IQuoteBreakdownCard> = ({ breakdown }) => {
 					</div>
 				</div>
 			</div>
-		)
+		</div>
 	);
 };
 
