@@ -8,7 +8,7 @@ type PersonalDetailsCardProps = {
 
 const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = () => {
 	return (
-		<div className="bg-white p-3">
+		<div className="bg-white mb-[27px]">
 			<CardTitle title="Personal Details" />
 
 			<div className="flex items-center gap-3">

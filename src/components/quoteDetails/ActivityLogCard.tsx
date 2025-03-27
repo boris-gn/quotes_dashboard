@@ -1,4 +1,5 @@
 import React from 'react';
+import CardTitle from './CartTitle';
 
 const ActivityLogCard: React.FC = () => {
 	const activityLog = [
@@ -44,18 +45,13 @@ const ActivityLogCard: React.FC = () => {
 	];
 
 	return (
-		<div className="bg-white border border-neutral-200 rounded-lg p-3 relative">
-			<div className="flex items-center justify-between mb-3">
-				<h2 className="text-brand-primary font-bold text-base">
-					Activity Log
-				</h2>
-				<hr className="flex-grow mx-3 border-neutral-200" />
-			</div>
-			<div className="relative pl-4">
-				<div className="absolute left-0 top-0 h-full w-0.5 bg-neutral-200"></div>
+		<div className="bg-white relative">
+
+			<CardTitle title='Activity Log' />
+			<div className="relative pl-4 text-left max-w-[200px]">
 				{activityLog.map((log, index) => (
-					<div key={index} className="relative pl-4 mb-3">
-						<div className="absolute left-0 top-2 w-2.5 h-2.5 bg-neutral-200 rounded-full"></div>
+					<div key={index} className="relative pl-2 pb-3 border-l border-neutral-200">
+						<div className="absolute -left-[5px] top-0.5 w-2.5 h-2.5 bg-neutral-200 rounded-full"></div>
 						<div className="text-brand-primary text-[10px]">
 							{log.date}
 						</div>

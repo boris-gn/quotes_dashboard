@@ -4,7 +4,7 @@ import { QuoteHeader } from './QuoteTableHeader';
 import { QuoteColumnHeaders } from './QuoteColumnHeaders';
 import { QuoteRow } from './QuoteTableRow';
 import { QuotePagination } from './QuotePagination';
-import withContainer from '../hocs/Container';
+import withContainer from './Container';
 
 interface QuotesTableProps {
 	quotes: Quote[];

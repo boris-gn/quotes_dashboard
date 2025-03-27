@@ -1,16 +1,13 @@
 import React from 'react';
 import EditIcon from '../../assets/icons/edit.svg?react';
+import CardTitle from './CartTitle';
 
 const QuoteStatusCard: React.FC = () => {
 	return (
-		<div className="bg-white border border-neutral-200 rounded-lg p-3">
-			<div className="flex items-center justify-between mb-3">
-				<h2 className="text-brand-primary font-bold text-base">
-					Quote Status
-				</h2>
-				<hr className="flex-grow mx-3 border-neutral-200" />
-			</div>
-			<div className="flex items-center justify-between">
+		<div className="bg-white ">
+			<CardTitle title='Quote Status' />
+
+			<div className="flex items-center mb-[24px]">
 				<div className="flex items-center gap-2">
 					<span className="text-brand-primary font-bold text-xs">
 						Current Status:
@@ -20,7 +17,7 @@ const QuoteStatusCard: React.FC = () => {
 						Pending Approval
 					</div>
 				</div>
-				<EditIcon className="text-brand-primary" />
+				<EditIcon className="text-brand-primary pl-1" />
 			</div>
 		</div>
 	);

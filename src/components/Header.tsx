@@ -20,7 +20,7 @@ const Header = () => {
 
 	return (
 		<header>
-			<EnhancedInsuranceQuoteDetails />
+			<EnhancedInsuranceQuoteDetails className='max-w-[1024px]' />
 			{/* Header
 			<InsuranceTypeBadge type="Life" />
 			<InsuranceTypeBadge type="Vehicle" />

@@ -6,7 +6,7 @@ const PolicyInformationCard: React.FC = () => {
 		<div className="bg-white text-left">
 			<CardTitle title="Policy Information" />
 			<div className="space-y-2">
-				<div className="flex gap-2 px-3">
+				<div className="flex gap-2 px-[14px]">
 					<span className="text-brand-primary font-bold text-xs w-36">
 						Policy Type:
 					</span>
@@ -14,7 +14,7 @@ const PolicyInformationCard: React.FC = () => {
 						Comprehensive Auto Insurance
 					</span>
 				</div>
-				<div className="flex gap-2 px-3">
+				<div className="flex gap-2 px-[14px]">
 					<span className="text-brand-primary font-bold text-xs w-36">
 						Policy Description:
 					</span>
@@ -28,7 +28,7 @@ const PolicyInformationCard: React.FC = () => {
 					</span>
 					<span className="text-brand-primary text-xs">$50,000</span>
 				</div>
-				<div className="flex  gap-2 px-3">
+				<div className="flex gap-2 px-3  mb-[24px]">
 					<span className="text-brand-primary font-bold text-xs w-36">
 						Deductible:
 					</span>
