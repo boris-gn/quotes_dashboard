@@ -1,7 +1,7 @@
 import React from 'react';
 import EditIcon from '../../assets/icons/edit.svg?react';
 import CardTitle from './CartTitle';
-import { ContactInformation } from '../../store/dummyData';
+import { ContactInformation } from '../../../data/quotesData';
 
 type PersonalDetailsCardProps = {
 	details: {
@@ -16,7 +16,6 @@ type PersonalDetailsCardProps = {
 const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = ({
 	details,
 }) => {
-	console.log(details);
 	return (
 		<div className="bg-white mb-[27px]">
 			<CardTitle title="Personal Details" />

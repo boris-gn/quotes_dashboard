@@ -1,6 +1,6 @@
 import React from 'react';
 import CardTitle from './CartTitle';
-import { ContactInformation } from '../../store/dummyData';
+import { ContactInformation } from '../../../data/quotesData';
 
 type ContactInformationCardProps = {
 	contactInfo: ContactInformation;

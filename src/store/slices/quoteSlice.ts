@@ -1,20 +1,37 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { dummyData, DummyData } from '../dummyData';
+import { IQuotesData } from '../../../data/quotesData';
 
-const initialState: DummyData = dummyData;
+interface QuoteState {
+	data: IQuotesData | null;
+	isLoading: boolean;
+	error: string | null;
+}
 
-const quoteSlice = createSlice({
-	name: 'quote',
+const initialState: QuoteState = {
+	data: null,
+	isLoading: false,
+	error: null,
+};
+
+const quotesSlice = createSlice({
+	name: 'quotes',
 	initialState,
 	reducers: {
-		updateQuoteStatus(state, action: PayloadAction<string>) {
-			state.quoteStatus = action.payload;
+		setLoading: (state, action: PayloadAction<boolean>) => {
+			state.isLoading = action.payload;
 		},
-		updatePremiumAmount(state, action: PayloadAction<string>) {
-			state.quoteBreakdown.premiumAmount = action.payload;
+
+		setError: (state, action: PayloadAction<string | null>) => {
+			state.error = action.payload;
+		},
+
+		setQuotes: (state, action: PayloadAction<IQuotesData>) => {
+			state.data = action.payload;
+			state.isLoading = false;
+			state.error = null;
 		},
 	},
 });
 
-export const { updateQuoteStatus, updatePremiumAmount } = quoteSlice.actions;
-export default quoteSlice.reducer;
+export const { setLoading, setError, setQuotes } = quotesSlice.actions;
+export default quotesSlice.reducer;

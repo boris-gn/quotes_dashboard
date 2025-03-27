@@ -10,8 +10,8 @@ import SupportingDocumentsCard from './quoteDetails/SupportingDocumentsCard';
 import ActivityLogCard from './quoteDetails/ActivityLogCard';
 import withContainer from './Container';
 import ActionButtons from './quoteDetails/ActionButtons';
-import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
+import { useAppSelector } from '../hooks/useRedux';
 
 import Edit from '../assets/icons/edit.svg?react';
 import Follow from '../assets/icons/node-add.svg?react';
@@ -43,41 +43,43 @@ const actions = [
 ];
 
 const InsuranceQuoteDetails: React.FC = () => {
-	const quotes = useSelector((state: RootState) => state.quote);
+	const quotes = useAppSelector((state: RootState) => state.quote.data);
 
 	return (
-		<>
-			<div className="flex flex-col md:flex-row items-stretch min-h-[656px]">
-				{/* Left Column */}
-				<div className="pr-10 w-full md:w-[380px] flex flex-col gap-4">
-					<PersonalDetailsCard details={quotes.personalDetails} />
-					<ContactInformationCard
-						contactInfo={quotes.personalDetails.contactInformation}
-					/>
-					<PolicyInformationCard
-						policyInfo={quotes.policyInformation}
-					/>
-					<CustomerHistoryCard history={quotes.customerHistory} />
+		quotes && (
+			<>
+				<div className="flex flex-col md:flex-row items-stretch min-h-[656px]">
+					<div className="pr-10 w-full md:w-[380px] flex flex-col gap-4">
+						<PersonalDetailsCard details={quotes.personalDetails} />
+						<ContactInformationCard
+							contactInfo={
+								quotes.personalDetails.contactInformation
+							}
+						/>
+						<PolicyInformationCard
+							policyInfo={quotes.policyInformation}
+						/>
+						<CustomerHistoryCard history={quotes.customerHistory} />
+					</div>
+					<div className="border-x border-gray-200 px-[48px] w-full md:max-w-[350px] flex flex-col gap-4">
+						<QuoteStatusCard status={quotes.quoteStatus} />
+						<QuoteBreakdownCard breakdown={quotes.quoteBreakdown} />
+						<ExpirationDatesCard dates={quotes.expirationDates} />
+						<SupportingDocumentsCard
+							docs={quotes.supportingDocuments}
+						/>
+					</div>
+
+					<div className="w-full md:w-[315px] px-12 flex flex-col">
+						<ActivityLogCard activityLog={quotes.activityLog} />
+					</div>
 				</div>
 
-				{/* Middle Column */}
-				<div className="border-x border-gray-200 px-[48px] w-full md:max-w-[350px] flex flex-col gap-4">
-					<QuoteStatusCard />
-					<QuoteBreakdownCard />
-					<ExpirationDatesCard />
-					<SupportingDocumentsCard />
+				<div className="mt-8">
+					<ActionButtons actions={actions} />
 				</div>
-
-				{/* Right Column */}
-				<div className="w-full md:w-[315px] px-12 flex flex-col">
-					<ActivityLogCard />
-				</div>
-			</div>
-
-			<div className="mt-8">
-				<ActionButtons actions={actions} />
-			</div>
-		</>
+			</>
+		)
 	);
 };
 

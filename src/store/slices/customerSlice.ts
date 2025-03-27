@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { dummyData } from '../dummyData';
+import { quotesData } from '../../../data/quotesData';
 
-const initialState = dummyData.personalDetails;
+const initialState = quotesData.personalDetails;
 
 const customerSlice = createSlice({
 	name: 'customer',

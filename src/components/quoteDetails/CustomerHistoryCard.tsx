@@ -1,7 +1,7 @@
 import React from 'react';
 import CardTitle from './CartTitle';
 import StatusBadge from '../StatusBadge';
-import { CustomerHistory } from '../../store/dummyData';
+import { CustomerHistory } from '../../../data/quotesData';
 
 type CustomerHistoryCardProps = {
 	history: CustomerHistory[];
@@ -10,7 +10,6 @@ type CustomerHistoryCardProps = {
 const CustomerHistoryCard: React.FC<CustomerHistoryCardProps> = ({
 	history,
 }) => {
-	console.log(history);
 	return (
 		<div className="bg-white">
 			<CardTitle title="Customer History" />
@@ -21,22 +20,25 @@ const CustomerHistoryCard: React.FC<CustomerHistoryCardProps> = ({
 						Previous Policies:
 					</span>
 				</div>
-				{history.map((history) => {
+				{history.map((historyItem) => {
 					return (
-						<>
+						<div key={historyItem.policyId}>
 							<div className="flex">
 								<span className="text-brand-primary text-[10px]">
-									{history.policyId}
+									{historyItem.policyId}
 								</span>
 								<StatusBadge isFilled status="Active" />
 							</div>
 							<div className="flex-col sm:flex-row flex sm:items-center">
 								<span className="text-brand-primary text-[10px]">
-									{history.type}
+									{historyItem.type}
 								</span>
-								<StatusBadge isFilled status={history.status} />
+								<StatusBadge
+									isFilled
+									status={historyItem.status}
+								/>
 							</div>
-						</>
+						</div>
 					);
 				})}
 			</div>

@@ -23,10 +23,18 @@ export interface Discount {
 	amount: string;
 }
 
+export interface Discount {
+	type: string;
+	amount: string;
+}
+
 export interface QuoteBreakdown {
 	premiumAmount: string;
 	annualPremium: string;
-	discounts: Discount[];
+	discounts: {
+		safe: Discount;
+		multi: Discount;
+	};
 	totalCharges: string;
 	tax: string;
 	finalPremium: string;
@@ -42,7 +50,13 @@ export interface ActivityLog {
 	description: string;
 }
 
-export interface DummyData {
+export interface SupportingDocuments {
+	terms: string;
+	proof: string;
+	reg: string;
+}
+
+export interface IQuotesData {
 	personalDetails: {
 		customerId: string;
 		fullName: string;
@@ -55,11 +69,11 @@ export interface DummyData {
 	quoteStatus: string;
 	quoteBreakdown: QuoteBreakdown;
 	expirationDates: ExpirationDates;
-	supportingDocuments: string[];
+	supportingDocuments: SupportingDocuments;
 	activityLog: ActivityLog[];
 }
 
-export const dummyData: DummyData = {
+export const quotesData: IQuotesData = {
 	personalDetails: {
 		customerId: 'CUST-34256',
 		fullName: 'Theresa Heidenreich',
@@ -94,10 +108,10 @@ export const dummyData: DummyData = {
 	quoteBreakdown: {
 		premiumAmount: '$120 per month',
 		annualPremium: '$1,400',
-		discounts: [
-			{ type: 'Safe Driver Discount', amount: '-$50' },
-			{ type: 'Multi-Policy Discount', amount: '-$30' },
-		],
+		discounts: {
+			safe: { type: 'Safe Driver Discount', amount: '-$50' },
+			multi: { type: 'Multi-Policy Discount', amount: '-$30' },
+		},
 		totalCharges: '$1,320',
 		tax: '$20',
 		finalPremium: '$1,340',
@@ -106,11 +120,11 @@ export const dummyData: DummyData = {
 		effectiveDate: '2024-10-15',
 		expirationDate: '2025-10-14',
 	},
-	supportingDocuments: [
-		'Auto Insurance Terms & Conditions.pdf',
-		'Customer ID Proof.pdf',
-		'Vehicle Registration Document.pdf',
-	],
+	supportingDocuments: {
+		terms: 'Auto Insurance Terms & Conditions.pdf',
+		proof: 'Customer ID Proof.pdf',
+		reg: 'Vehicle Registration Document.pdf',
+	},
 	activityLog: [
 		{
 			date: '20-10-2023',

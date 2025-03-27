@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { dummyData } from '../dummyData';
+import { quotesData } from '../../../data/quotesData';
 
-const initialState = dummyData.policyInformation;
+const initialState = quotesData.policyInformation;
 
 const policySlice = createSlice({
 	name: 'policy',

@@ -1,6 +1,6 @@
 import React from 'react';
 import CardTitle from './CartTitle';
-import { PolicyInformation } from '../../store/dummyData';
+import { PolicyInformation } from '../../../data/quotesData';
 
 type PolicyInformationCardProps = {
 	policyInfo: PolicyInformation;
