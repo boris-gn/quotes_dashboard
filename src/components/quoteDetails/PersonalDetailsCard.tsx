@@ -1,12 +1,22 @@
 import React from 'react';
 import EditIcon from '../../assets/icons/edit.svg?react';
 import CardTitle from './CartTitle';
+import { ContactInformation } from '../../store/dummyData';
 
 type PersonalDetailsCardProps = {
-	//
+	details: {
+		customerId: string;
+		fullName: string;
+		gender: string;
+		occupation: string;
+		contactInformation: ContactInformation;
+	};
 };
 
-const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = () => {
+const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = ({
+	details,
+}) => {
+	console.log(details);
 	return (
 		<div className="bg-white mb-[27px]">
 			<CardTitle title="Personal Details" />
@@ -30,7 +40,7 @@ const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = () => {
 							Customer ID:
 						</span>
 						<span className="text-brand-primary text-xs">
-							CUST-34256
+							{details.customerId}
 						</span>
 					</div>
 					<div className="flex gap-2">
@@ -38,21 +48,23 @@ const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = () => {
 							Full Name:
 						</span>
 						<span className="text-brand-primary text-xs">
-							Theresa Heidenreich
+							{details.fullName}
 						</span>
 					</div>
 					<div className="flex gap-2">
 						<span className="text-brand-primary font-bold text-xs">
 							Gender:
 						</span>
-						<span className="text-brand-primary text-xs">Male</span>
+						<span className="text-brand-primary text-xs">
+							{details.gender}
+						</span>
 					</div>
 					<div className="flex gap-2">
 						<span className="text-brand-primary font-bold text-xs">
 							Occupation:
 						</span>
 						<span className="text-brand-primary text-xs">
-							Marketing Manager
+							{details.occupation}
 						</span>
 					</div>
 				</div>

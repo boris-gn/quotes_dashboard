@@ -25,7 +25,11 @@
 	--color-gray-500: #596774;
 
 	--text-10: 10px;
+	--text-12: 12px;
 	--text-14: 14px;
+	--text-48: 48px;
+
+	--tracking-minus-1: -1px;
 
 	--spacing: 4px;
 
@@ -33,6 +37,9 @@
 	--radius-12: 12px;
 	--radius-100: 100px;
 
-	--leading-1: 1.6;
+	--leading-133: 1.33;
+	--leading-115: 1.5;
+	--leading-116: 1.6;
+	--leading-117: 1.17;
 	--leading-20: 20px;
 }

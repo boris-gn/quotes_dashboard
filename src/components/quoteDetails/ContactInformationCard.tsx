@@ -1,41 +1,48 @@
 import React from 'react';
 import CardTitle from './CartTitle';
+import { ContactInformation } from '../../store/dummyData';
 
-const ContactInformationCard: React.FC = () => {
+type ContactInformationCardProps = {
+	contactInfo: ContactInformation;
+};
+
+const ContactInformationCard: React.FC<ContactInformationCardProps> = ({
+	contactInfo,
+}) => {
 	return (
 		<div className="bg-white text-left">
 			<CardTitle title="Contact Information" />
 			<div className="space-y-2">
-				<div className="flex gap-2 px-[14px]">
-					<span className="text-brand-primary font-bold text-xs w-24">
+				<div className="px-[14px]">
+					<span className="mr-1 text-brand-primary font-bold text-xs w-24">
 						Mobile Phone:
 					</span>
 					<span className="text-brand-primary text-xs">
-						+1 123 456 7890
+						{contactInfo.mobilePhone}
 					</span>
 				</div>
-				<div className="flex gap-2 px-[14px]">
-					<span className="text-brand-primary font-bold text-xs w-24">
+				<div className="px-[14px]">
+					<span className="mr-1 text-brand-primary font-bold text-xs w-24">
 						Home Phone:
 					</span>
 					<span className="text-brand-primary text-xs">
-						+1 123 456 7890
+						{contactInfo.homePhone}
 					</span>
 				</div>
-				<div className="flex gap-2 px-[14px]">
-					<span className="text-brand-primary font-bold text-xs w-24">
+				<div className="px-[14px]">
+					<span className="mr-1 text-brand-primary font-bold text-xs w-24">
 						Email:
 					</span>
 					<span className="text-brand-primary text-xs">
-						Theresa@email.com
+						{contactInfo.email}
 					</span>
 				</div>
-				<div className="flex gap-2 px-[14px] mb-[24px]">
-					<span className="text-brand-primary font-bold text-xs w-24">
+				<div className="px-[14px] mb-[24px]">
+					<span className="mr-1 text-brand-primary font-bold text-xs w-24">
 						Address:
 					</span>
 					<span className="text-brand-primary text-xs">
-						6470 Koepp Street, South Hillary 72456-8817
+						{contactInfo.address}
 					</span>
 				</div>
 			</div>

@@ -1,49 +1,26 @@
-import InsuranceTypeBadge from './InsuranceTypeBadge';
-import StatusBadge from './StatusBadge';
 import IconButton from './IconButton';
 import Dropdown from './Dropdown';
-import EnhancedQuotesTable from './QuotesTable';
-import EnhancedInsuranceQuoteDetails from './InsuranceQuoteDetails';
-import EnhancedInsuranceQuoteDetailsMobile from './InsuranceQuoteDetailsMobile';
-
-import Icon from '../assets/icons/edit.svg?react';
-import { quotes } from '../features/quotes/dummyQuotes';
-import { useEffect, useState } from 'react';
+import BellIcon from '../assets/icons/bell.svg?react';
 
 const Header = () => {
-	const [a, b] = useState(false);
-
-	useEffect(() => {
-		setTimeout(() => {
-			b(true);
-		}, 4000);
-	}, []);
-
 	return (
-		<header>
-			<div className='hidden sm:block'>
-				<EnhancedInsuranceQuoteDetails className='max-w-[1024px]' />
-				</div> 
-			<div className='block sm:hidden'>
-				<EnhancedInsuranceQuoteDetailsMobile  />
+		<header className="flex justify-between items-top mb-4">
+			<div>
+				<h1 className="text-48 text-brand-primary font-bold racking-minus-1 leading-117">
+					Page name
+				</h1>
+				<p className="leading-115 text-gray-500 text-base font-normal tracking-normal">
+					Breadcrumb
+				</p>
 			</div>
-			{/* Header
-			<InsuranceTypeBadge type="Life" />
-			<InsuranceTypeBadge type="Vehicle" />
-			<InsuranceTypeBadge type="Business" />
-			<InsuranceTypeBadge type="House" />
-			<InsuranceTypeBadge type="Travel" />
-			<br />
-			<StatusBadge status="Pending" />
-			<StatusBadge status="Approved" />
-			<StatusBadge status="Rejected" />
-			<StatusBadge status="Expired" />
-			<br />
-			<IconButton icon={<Icon />} onClick={() => {}} />
-			<br />
-			<Dropdown />
-			<br />
-			<EnhancedQuotesTable loading={!a} quotes={quotes} /> */}
+			<div className="flex justify-between gap-3">
+				<IconButton
+					className="w-[50px] h-[50px]"
+					icon={<BellIcon className="w-6 h-6" />}
+					onClick={() => {}}
+				/>
+				<Dropdown />
+			</div>
 		</header>
 	);
 };

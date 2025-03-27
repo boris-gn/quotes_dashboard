@@ -1,8 +1,16 @@
 import React from 'react';
 import CardTitle from './CartTitle';
 import StatusBadge from '../StatusBadge';
+import { CustomerHistory } from '../../store/dummyData';
 
-const CustomerHistoryCard: React.FC = () => {
+type CustomerHistoryCardProps = {
+	history: CustomerHistory[];
+};
+
+const CustomerHistoryCard: React.FC<CustomerHistoryCardProps> = ({
+	history,
+}) => {
+	console.log(history);
 	return (
 		<div className="bg-white">
 			<CardTitle title="Customer History" />
@@ -13,18 +21,24 @@ const CustomerHistoryCard: React.FC = () => {
 						Previous Policies:
 					</span>
 				</div>
-				<div className="flex-col sm:flex-row flex sm:items-center gap-2.5 sm:gap-0">
-					<span className="text-brand-primary text-[10px]">
-						Policy #P-20231011-002 (Health Insurance):
-					</span>
-					<StatusBadge isFilled status="Active" />
-				</div>
-				<div className="flex-col sm:flex-row flex sm:items-center  gap-2.5 sm:gap-0">
-					<span className="text-brand-primary text-[10px]">
-						Policy #P-20230905-001 (Home Insurance):
-					</span>
-					<StatusBadge isFilled status="Expired" />
-				</div>
+				{history.map((history) => {
+					return (
+						<>
+							<div className="flex">
+								<span className="text-brand-primary text-[10px]">
+									{history.policyId}
+								</span>
+								<StatusBadge isFilled status="Active" />
+							</div>
+							<div className="flex-col sm:flex-row flex sm:items-center">
+								<span className="text-brand-primary text-[10px]">
+									{history.type}
+								</span>
+								<StatusBadge isFilled status={history.status} />
+							</div>
+						</>
+					);
+				})}
 			</div>
 		</div>
 	);

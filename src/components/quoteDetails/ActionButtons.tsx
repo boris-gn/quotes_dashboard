@@ -5,7 +5,7 @@ interface ActionButtonsProps {
 		icon?: React.ReactNode;
 		text: string;
 	}[];
-	onActionClick?: (action: string) => void;
+	onActionClick?: (text: string) => void;
 }
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({
@@ -13,15 +13,27 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
 	onActionClick,
 }) => {
 	return (
-		<div className="flex space-x-2 flex-wrap justify-center">
+		<div className="flex flex-wrap justify-center gap-2">
 			{actions?.map((action, index) => (
+				// <IconButton
+				// 	key={index}
+				// 	className="text-12 hover:bg-neutral-100 "
+				// 	icon={action.icon}
+				// 	onClick={onActionClick}
+				// 	label={action.text}
+				// />
 				<div
-				key={index}
-				className="flex-none basis-[170px] justify-center flex items-center cursor-pointer border border-gray-100 hover:bg-gray-100 rounded-md py-1 my-1 px-2"
-				onClick={() => onActionClick && onActionClick(action.text)}
+					key={index}
+					className="flex-none basis-[170px] justify-center flex items-center cursor-pointer border border-gray-100 hover:bg-neutral-100 rounded-md py-1 my-1 px-2"
+					onClick={() => onActionClick && onActionClick(action.text)}
 				>
-				<IconButton className='border-none text-[12px]' icon={action.icon} onClick={() => {}} />
-				<span>{action.text}</span>
+					<IconButton
+						className="border-none text-12"
+						icon={action.icon}
+						onClick={() => {}}
+						label={action.text}
+					/>
+					<span></span>
 				</div>
 			))}
 		</div>

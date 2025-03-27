@@ -40,7 +40,7 @@ const InsuranceTypeBadge: FC<InsuranceTypeBadgeProps> = ({ type }) => {
 			className={`flex mx-2 items-center justify-start gap-1 px-2 py-0.5 rounded-100 w-18.5 ${bgColors[type]}`}
 		>
 			{Icon && <Icon width={12} height={12} />}
-			<span className="text-10 font-bold leading-1">{type}</span>
+			<span className="text-10 font-bold leading-116">{type}</span>
 		</div>
 	);
 };

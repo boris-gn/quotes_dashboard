@@ -32,7 +32,7 @@ export const QuotePagination: React.FC<QuotePaginationProps> = ({
 						onClick={() => onPageChange(page)}
 						className={`
               flex items-center justify-center w-6 h-6
-              rounded-full text-gray-600 leading-[1.33]
+              rounded-full text-gray-600 leading-133
               ${
 					currentPage === page
 						? '!bg-brand-primary text-white'

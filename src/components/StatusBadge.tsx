@@ -5,7 +5,8 @@ export type StatusType =
 	| 'Approved'
 	| 'Rejected'
 	| 'Expired'
-	| 'Active';
+	| 'Active'
+	| string;
 
 interface InsuranceTypeBadgeProps {
 	status: StatusType;
@@ -47,7 +48,7 @@ const StatusBadge: FC<InsuranceTypeBadgeProps> = ({ status, isFilled }) => {
 					isFilled ? bgColors[status].bg : 'bg-white '
 				}`}
 			/>
-			<span className="text-10 text-white font-bold leading-1">
+			<span className="text-10 text-white font-bold leading-116">
 				{status}
 			</span>
 		</div>
