@@ -41,37 +41,40 @@ const actions = [
 	}
 ]
 
-const InsuranceQuoteDetails: React.FC = () => {
+const Account = withContainer(() => <div className="pr-10 w-full md:w-[360px] flex flex-col gap-4">
+	<PersonalDetailsCard />
+	<ContactInformationCard />
+	<PolicyInformationCard />
+	<CustomerHistoryCard />
+</div>)
+
+const QuarterDetails = withContainer(() => <div className="border-none sm:border-x border-gray-200 px-[48px] w-full md:max-w-[350px] flex flex-col gap-4">
+	<QuoteStatusCard />
+	<QuoteBreakdownCard />
+	<ExpirationDatesCard />
+	<SupportingDocumentsCard />
+</div>)
+
+
+const Actions = withContainer(() => <div className="w-full md:w-[315px] px-12 flex flex-col">
+	<ActivityLogCard />
+</div>)
+
+const InsuranceQuoteDetailsMobile: React.FC = () => {
 	return (
 		<>
-			<div className="flex flex-col md:flex-row items-stretch min-h-[656px] max-w-[975px]">
-				{/* Left Column */}
-				<div className="pr-10 w-full md:w-[380px] flex flex-col gap-4">
-					<PersonalDetailsCard />
-					<ContactInformationCard />
-					<PolicyInformationCard />
-					<CustomerHistoryCard />
-				</div>
+			<div className="flex flex-col md:flex-row items-stretch min-h-[656px] max-w-[975px] gap-2.5">
+				<Account />
 
-				{/* Middle Column */}
-				<div className="border-x border-gray-200 px-[48px] w-full md:max-w-[350px] flex flex-col gap-4">
-					<QuoteStatusCard />
-					<QuoteBreakdownCard />
-					<ExpirationDatesCard />
-					<SupportingDocumentsCard />
-				</div>
+				<QuarterDetails />
 
-				{/* Right Column */}
-				<div className="w-full md:w-[315px] px-12 flex flex-col">
-					<ActivityLogCard />
-				</div>
-				</div>
-
-			<div className="mt-8"><ActionButtons actions={actions} /></div>
-
+				<Actions />				
+			</div>
+			
+			<div className="mt-8 sm:block hidden"><ActionButtons actions={actions} /></div>
 		</>
 	);
 };
 
-const EnhancedInsuranceQuoteDetails = withContainer(InsuranceQuoteDetails);
-export default EnhancedInsuranceQuoteDetails;
+const EnhancedInsuranceQuoteDetailsMobile = withContainer(InsuranceQuoteDetailsMobile);
+export default EnhancedInsuranceQuoteDetailsMobile;

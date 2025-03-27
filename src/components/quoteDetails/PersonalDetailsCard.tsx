@@ -11,7 +11,7 @@ const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = () => {
 		<div className="bg-white mb-[27px]">
 			<CardTitle title="Personal Details" />
 
-			<div className="flex items-center gap-3">
+			<div className="flex-col md:flex-row flex items-center gap-3">
 				<div
 					className="relative w-24 h-24 bg-gradient-to-l from-[#9dc8e6] to-[#9dc8e6] 
           rounded-lg object-cover"

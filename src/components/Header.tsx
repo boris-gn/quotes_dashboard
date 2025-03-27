@@ -4,6 +4,7 @@ import IconButton from './IconButton';
 import Dropdown from './Dropdown';
 import EnhancedQuotesTable from './QuotesTable';
 import EnhancedInsuranceQuoteDetails from './InsuranceQuoteDetails';
+import EnhancedInsuranceQuoteDetailsMobile from './InsuranceQuoteDetailsMobile';
 
 import Icon from '../assets/icons/edit.svg?react';
 import { quotes } from '../features/quotes/dummyQuotes';
@@ -20,7 +21,12 @@ const Header = () => {
 
 	return (
 		<header>
-			<EnhancedInsuranceQuoteDetails className='max-w-[1024px]' />
+			<div className='hidden sm:block'>
+				<EnhancedInsuranceQuoteDetails className='max-w-[1024px]' />
+				</div> 
+			<div className='block sm:hidden'>
+				<EnhancedInsuranceQuoteDetailsMobile  />
+			</div>
 			{/* Header
 			<InsuranceTypeBadge type="Life" />
 			<InsuranceTypeBadge type="Vehicle" />

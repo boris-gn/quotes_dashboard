@@ -13,13 +13,13 @@ const CustomerHistoryCard: React.FC = () => {
 						Previous Policies:
 					</span>
 				</div>
-				<div className="flex items-center">
+				<div className="flex-col sm:flex-row flex sm:items-center gap-2.5 sm:gap-0">
 					<span className="text-brand-primary text-[10px]">
 						Policy #P-20231011-002 (Health Insurance):
 					</span>
 					<StatusBadge isFilled status="Active" />
 				</div>
-				<div className="flex items-center">
+				<div className="flex-col sm:flex-row flex sm:items-center  gap-2.5 sm:gap-0">
 					<span className="text-brand-primary text-[10px]">
 						Policy #P-20230905-001 (Home Insurance):
 					</span>
