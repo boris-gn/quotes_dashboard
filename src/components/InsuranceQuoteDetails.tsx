@@ -47,7 +47,7 @@ const InsuranceQuoteDetails: React.FC = () => {
 
 	return (
 		<>
-			<div className="flex flex-col md:flex-row items-stretch min-h-[656px]">
+			<div className="overflow-x-auto flex flex-col md:flex-row items-stretch min-h-[656px]">
 				{/* Left Column */}
 				<div className="pr-10 w-full md:w-[380px] flex flex-col gap-4">
 					<PersonalDetailsCard details={quotes.personalDetails} />

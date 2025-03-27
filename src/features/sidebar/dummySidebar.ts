@@ -13,6 +13,7 @@ export const sidebar: Sidebar[] = [
 		label: 'Home',
 		icon: HomeIcon,
 		className: '[&>path]:stroke-white',
+		mobileClassName: '[&>path]:stroke-white [&>path]:fill-gray-500',
 		url: '/',
 	},
 	{
@@ -20,6 +21,7 @@ export const sidebar: Sidebar[] = [
 		label: 'Quotes',
 		icon: DocumentIcon,
 		className: '[&>path]:stroke-white',
+		mobileClassName: '[&>path]:stroke-white [&>path]:fill-gray-500',
 		url: '/quotes',
 	},
 	{
@@ -27,6 +29,7 @@ export const sidebar: Sidebar[] = [
 		label: 'Policies',
 		icon: PolicyIcon,
 		className: '[&>path]:stroke-white',
+		mobileClassName: '[&>path]:fill-gray-500',
 		url: '/policies',
 	},
 	{
@@ -34,6 +37,7 @@ export const sidebar: Sidebar[] = [
 		label: 'Analytics',
 		icon: ChartIcon,
 		className: '[&>*]:stroke-white',
+		mobileClassName: '[&>*]:fill-gray-500',
 		url: '/analytics',
 	},
 	{
@@ -41,6 +45,7 @@ export const sidebar: Sidebar[] = [
 		label: 'Users',
 		icon: UserGroupIcon,
 		className: '[&>*]:stroke-white',
+		mobileClassName: '[&>*]:fill-gray-500',
 		url: '/users',
 	},
 	{
@@ -48,6 +53,7 @@ export const sidebar: Sidebar[] = [
 		label: 'Settings',
 		icon: SettingsIcon,
 		className: '[&>*]:stroke-white',
+		mobileClassName: '[&>*]:fill-gray-500',
 		url: '/settings',
 	},
 ];

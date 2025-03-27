@@ -4,8 +4,8 @@ import BellIcon from '../assets/icons/bell.svg?react';
 
 const Header = () => {
 	return (
-		<header className="flex justify-between items-top mb-4">
-			<div>
+		<>
+			<div className='hidden md:block'>
 				<h1 className="text-48 text-brand-primary font-bold racking-minus-1 leading-117">
 					Page name
 				</h1>
@@ -13,15 +13,16 @@ const Header = () => {
 					Breadcrumb
 				</p>
 			</div>
-			<div className="flex justify-between gap-3">
+			<div className="w-full md:w-auto flex flex-row-reverse md:flex-row md:justify-end justify-between gap-3 ">
 				<IconButton
-					className="w-[50px] h-[50px]"
+					className="md:w-12 md:h-12 w-10 h-10 !rounded-full !md:rounded-lg"
 					icon={<BellIcon className="w-6 h-6" />}
 					onClick={() => {}}
 				/>
 				<Dropdown />
 			</div>
-		</header>
+			
+		</>
 	);
 };
 

@@ -1,21 +1,16 @@
-import { useState, useEffect } from 'react';
 import EnhancedQuotesTable from '../components/QuotesTable';
-import EnhancedInsuranceQuoteDetails from '../components/InsuranceQuoteDetails';
 import { quotes } from '../features/quotes/dummyQuotes';
+import QuotesCalendarContainer from '../components/CalendarContainer';
+import QuotesChartContainer from '../components/ChartContainer';
 
 const Quotes = () => {
-	const [a, b] = useState(true);
-
-	useEffect(() => {
-		setTimeout(() => {
-			b(false);
-		}, 4000);
-	}, []);
-
 	return (
-		<div className="md:overflow-y-auto h-screen">
-			<EnhancedInsuranceQuoteDetails />
-			<EnhancedQuotesTable loading={a} quotes={quotes} />
+		<div className='overflow-x-auto w-full'>
+			<div className='flex flex-col md:flex-row gap-4 mb-4'>
+				<QuotesCalendarContainer />
+				<QuotesChartContainer />
+			</div>
+			<EnhancedQuotesTable className='relative' loading={false} quotes={quotes} />
 		</div>
 	);
 };

@@ -30,7 +30,7 @@ const CustomerHistoryCard: React.FC<CustomerHistoryCardProps> = ({
 								</span>
 								<StatusBadge isFilled status="Active" />
 							</div>
-							<div className="flex-col sm:flex-row flex sm:items-center">
+							<div className="flex-col md:flex-row flex md:items-center">
 								<span className="text-brand-primary text-[10px]">
 									{history.type}
 								</span>

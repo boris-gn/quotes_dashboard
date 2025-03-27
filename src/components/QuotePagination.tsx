@@ -5,15 +5,17 @@ interface QuotePaginationProps {
 	currentPage: number;
 	totalPages: number;
 	onPageChange: (page: number) => void;
+	className?: string;
 }
 
 export const QuotePagination: React.FC<QuotePaginationProps> = ({
 	currentPage,
 	totalPages,
 	onPageChange,
+	className,
 }) => {
 	return (
-		<div className="flex items-center justify-center space-x-2 mt-4">
+		<div className={`flex items-center justify-center space-x-2 mt-4 ${className}`}>
 			{/* Previous Arrow */}
 			<button
 				className="arrow-left-01-sharp cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"

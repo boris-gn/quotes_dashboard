@@ -9,7 +9,7 @@ export type StatusType =
 	| string;
 
 interface InsuranceTypeBadgeProps {
-	status: StatusType;
+	status?: StatusType;
 	isFilled?: boolean;
 }
 

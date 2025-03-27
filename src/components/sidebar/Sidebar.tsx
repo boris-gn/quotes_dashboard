@@ -9,7 +9,7 @@ const Sidebar: React.FC = () => {
 	const location = useLocation();
 
 	return (
-		<aside className="w-56 bg-white rounded-lg p-4 flex flex-col gap-3">
+		<aside className="w-56 bg-white rounded-lg flex flex-col gap-3">
 			<div className="border-b border-b-gray-200 pb-3">
 				<SearchInput />
 			</div>

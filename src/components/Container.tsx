@@ -15,7 +15,7 @@ const withContainer = <P extends object>(
 		...props
 	}) => (
 		<div
-			className={`container p-6 border rounded-12 border-gray-200 bg-white ${className}`}
+			className={`container p-3 md:p-6 border rounded-12 border-gray-200 bg-white ${className}`}
 		>
 			<WrappedComponent {...(props as P)} />
 		</div>

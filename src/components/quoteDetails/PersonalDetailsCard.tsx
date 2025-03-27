@@ -5,11 +5,11 @@ import { ContactInformation } from '../../store/dummyData';
 
 type PersonalDetailsCardProps = {
 	details: {
-		customerId: string;
-		fullName: string;
-		gender: string;
-		occupation: string;
-		contactInformation: ContactInformation;
+		customerId?: string;
+		fullName?: string;
+		gender?: string;
+		contactInformation?: ContactInformation;
+		occupation?: string;
 	};
 };
 

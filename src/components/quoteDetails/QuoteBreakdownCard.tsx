@@ -3,7 +3,7 @@ import CardTitle from './CartTitle';
 
 const QuoteBreakdownCard: React.FC = () => {
 	return (
-		<div className="bg-white min-w-auto sm:min-w-[280px]">
+		<div className="bg-white min-w-auto md:min-w-[280px]">
 			<CardTitle title='Quote Breakdown' />
 			
 			<div className="space-y-2 text-left pl-3">

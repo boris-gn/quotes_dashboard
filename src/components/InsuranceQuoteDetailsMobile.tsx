@@ -42,23 +42,23 @@ const actions = [
 ]
 
 const Account = withContainer(() => <div className="pr-10 w-full md:w-[360px] flex flex-col gap-4">
-	<PersonalDetailsCard />
-	<ContactInformationCard />
-	<PolicyInformationCard />
-	<CustomerHistoryCard />
-</div>)
+	<PersonalDetailsCard details={{}} />
+	<ContactInformationCard contactInfo={{}} />
+	<PolicyInformationCard policyInfo={{}} />
+	<CustomerHistoryCard history={[]} />
+</div>);
 
-const QuarterDetails = withContainer(() => <div className="border-none sm:border-x border-gray-200 px-[48px] w-full md:max-w-[350px] flex flex-col gap-4">
+const QuarterDetails = withContainer(() => <div className="border-none md:border-x border-gray-200 px-[48px] w-full md:max-w-[350px] flex flex-col gap-4">
 	<QuoteStatusCard />
 	<QuoteBreakdownCard />
 	<ExpirationDatesCard />
 	<SupportingDocumentsCard />
-</div>)
+</div>);
 
 
 const Actions = withContainer(() => <div className="w-full md:w-[315px] px-12 flex flex-col">
 	<ActivityLogCard />
-</div>)
+</div>);
 
 const InsuranceQuoteDetailsMobile: React.FC = () => {
 	return (
@@ -71,7 +71,7 @@ const InsuranceQuoteDetailsMobile: React.FC = () => {
 				<Actions />				
 			</div>
 			
-			<div className="mt-8 sm:block hidden"><ActionButtons actions={actions} /></div>
+			<div className="mt-8 md:block hidden"><ActionButtons actions={actions} /></div>
 		</>
 	);
 };

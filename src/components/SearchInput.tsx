@@ -1,8 +1,8 @@
 import SearchIcon from '../assets/icons/search.svg?react';
 
-const SearchInput: React.FC = () => {
+const SearchInput: React.FC<{ className?: string }> = ({ className }) => {
 	return (
-		<div className="w-full max-w-[188px] flex items-center gap-2 border border-gray-200 rounded-8 px-2 py-4">
+		<div className={`w-full flex items-center gap-2 border border-gray-200 rounded-8 px-2 py-4 ${className}`}>
 			<SearchIcon />
 			<input
 				type="text"

@@ -12,7 +12,7 @@ export const QuoteHeader: React.FC<QuoteHeaderProps> = ({ title }) => {
 				{title}
 			</div>
 			<div className="filter">
-				<IconButton icon={<FilterIcon />} onClick={() => {}} />
+				<IconButton labelClass='md:hidden' label='Filter' icon={<FilterIcon />} onClick={() => {}} />
 			</div>
 		</div>
 	);

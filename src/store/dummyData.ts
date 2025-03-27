@@ -1,21 +1,21 @@
 export interface ContactInformation {
-	mobilePhone: string;
-	homePhone: string;
-	email: string;
-	address: string;
+	mobilePhone?: string;
+	homePhone?: string;
+	email?: string;
+	address?: string;
 }
 
 export interface PolicyInformation {
-	policyType: string;
-	policyDescription: string;
-	coverageAmount: string;
-	deductible: string;
+	policyType?: string;
+	policyDescription?: string;
+	coverageAmount?: string;
+	deductible?: string;
 }
 
 export interface CustomerHistory {
-	policyId: string;
-	type: string;
-	status: string;
+	policyId?: string;
+	type?: string;
+	status?: string;
 }
 
 export interface Discount {
