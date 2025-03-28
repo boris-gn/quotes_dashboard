@@ -33,18 +33,13 @@ const App = () => {
 
 	return (
 		<>
-			<div className="flex gap-4 h-screen w-full overflow-hidden">
+			<div className="flex gap-4 h-screen w-full overflow-hidden pb-25 md:pb-0">
 				<EnhancedSidebar className="hidden md:block w-fit !p-4" />
 				<div className="flex gap-4 flex-col overflow-hidden w-full">
-					<div className=" md:flex md:overflow-hidden md:justify-between md:relative fixed top-0 left-0 right-0 bg-white px-5 pt-5 pb-4">
+					<div className="md:flex md:overflow-hidden md:justify-between md:relative fixed top-0 left-0 right-0 bg-white px-5 md:px-0 pt-5 md:pt-0 pb-4 md:pb-0">
 						<Header pageName={pageName} path={path} />
 					</div>
 					<SearchInput className="md:mt-0 mt-14 md:hidden" />
-
-					{/* <div className="flex overflow-hidden justify-between">
-						
-					</div>
-					<SearchInput className="md:hidden" /> */}
 					<div className="md:hidden block">
 						<h1 className="text-24 text-brand-primary font-bold racking-minus-1 leading-117 mb-0.5">
 							{pageName}
@@ -59,7 +54,7 @@ const App = () => {
 				</div>
 			</div>
 
-			<MobileSidebarContainer className="!max-w-full flex w-full md:hidden  fixed bottom-0 !p-3 left-0" />
+			<MobileSidebarContainer className="!max-w-full flex w-full md:hidden fixed bottom-0 !p-3 left-0" />
 		</>
 	);
 };

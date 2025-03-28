@@ -10,8 +10,6 @@ const Dropdown: React.FC = () => {
 		(state) => state.quote.data?.personalDetails
 	);
 
-	console.log(data);
-
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
