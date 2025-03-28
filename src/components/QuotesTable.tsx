@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Quote } from '../features/quotes/types';
-import { QuoteHeader } from './QuoteTableHeader';
-import { QuoteColumnHeaders } from './QuoteColumnHeaders';
-import { QuoteRow } from './QuoteTableRow';
-import { QuotePagination } from './QuotePagination';
+import { QuoteHeader } from './quotesTable/QuoteTableHeader';
+import { QuoteColumnHeaders } from './quotesTable/QuoteColumnHeaders';
+import { QuoteRow } from './quotesTable/QuoteTableRow';
+import { QuotePagination } from './quotesTable/QuotePagination';
+import TableSingleItem from './quotesTable/TableSingleItem';
 import withContainer from './Container';
-import TableSingleItem from './TableSingleItem';
 
 interface QuotesTableProps {
 	quotes: Quote[];
@@ -24,8 +24,8 @@ const QuotesTable: React.FC<QuotesTableProps> = ({ quotes, loading }) => {
 	return (
 		<>
 			<QuoteHeader title="Quotes" />
-			<div className='block md:hidden border-b border-gray-100 absolute left-0 right-0' />
-			<TableSingleItem className='mt-8 md:hidden block' />
+			<div className="block md:hidden border-b border-gray-100 absolute left-0 right-0" />
+			<TableSingleItem className="mt-8 md:hidden block" />
 			<div className="hidden md:block overflow-x-auto pb-1.5">
 				<table className="w-full !border-separate !border-spacing-y-3">
 					<QuoteColumnHeaders />
@@ -42,7 +42,7 @@ const QuotesTable: React.FC<QuotesTableProps> = ({ quotes, loading }) => {
 				</table>
 			</div>
 			<QuotePagination
-				className='hidden md:flex'
+				className="hidden md:flex"
 				currentPage={currentPage}
 				totalPages={Math.ceil((quotes?.length || 0) / itemsPerPage)}
 				onPageChange={setCurrentPage}

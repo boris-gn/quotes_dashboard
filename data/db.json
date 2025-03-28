@@ -6,6 +6,7 @@
 				"customerId": "CUST-34256",
 				"fullName": "Theresa Heidenreich",
 				"gender": "Female",
+				"photo": "src/assets/photos/photo.png",
 				"occupation": "Marketing Manager",
 				"contactInformation": {
 					"mobilePhone": "+1 123 456 7890",
@@ -76,6 +77,7 @@
 				"customerId": "CUST-17891",
 				"fullName": "Robert Willington",
 				"gender": "Male",
+				"photo": "src/assets/photos/photo.png",
 				"occupation": "Software Engineer",
 				"contactInformation": {
 					"mobilePhone": "+1 987 654 3210",
@@ -135,6 +137,7 @@
 				"customerId": "CUST-56789",
 				"fullName": "Sophia Martinez",
 				"gender": "Female",
+				"photo": "src/assets/photos/photo.png",
 				"occupation": "Architect",
 				"contactInformation": {
 					"mobilePhone": "+1 456 789 0123",

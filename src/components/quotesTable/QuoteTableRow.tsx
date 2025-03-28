@@ -1,8 +1,8 @@
 import React from 'react';
-import { Quote } from '../features/quotes/types';
-import InsuranceTypeBadge from './InsuranceTypeBadge';
-import StatusBadge from './StatusBadge';
-import { QuoteActions } from './QuoteActions';
+import { Quote } from '../../features/quotes/types';
+import InsuranceTypeBadge from '../InsuranceTypeBadge';
+import StatusBadge from '../StatusBadge';
+import { QuoteActions } from '../QuoteActions';
 import { useNavigate } from 'react-router-dom';
 
 interface QuoteRowProps {

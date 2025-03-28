@@ -1,5 +1,5 @@
-import LeftIcon from '../assets/icons/arrow-left.svg?react';
-import RightIcon from '../assets/icons/arrow-right.svg?react';
+import LeftIcon from '../../assets/icons/arrow-left.svg?react';
+import RightIcon from '../../assets/icons/arrow-right.svg?react';
 
 interface QuotePaginationProps {
 	currentPage: number;
@@ -15,7 +15,9 @@ export const QuotePagination: React.FC<QuotePaginationProps> = ({
 	className,
 }) => {
 	return (
-		<div className={`flex items-center justify-center space-x-2 mt-4 ${className}`}>
+		<div
+			className={`flex items-center justify-center space-x-2 mt-4 ${className}`}
+		>
 			{/* Previous Arrow */}
 			<button
 				className="arrow-left-01-sharp cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"

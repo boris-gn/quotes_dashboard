@@ -1,7 +1,7 @@
 import IconButton from './IconButton';
 import Dropdown from './Dropdown';
 import BellIcon from '../assets/icons/bell.svg?react';
-import Breadcrumb from './Breadctumb';
+import Breadcrumb from './Breadcrumb';
 
 const Header: React.FC<{ pageName: string; path: string }> = ({
 	pageName,

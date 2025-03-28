@@ -6,8 +6,11 @@ import { PersonalDetails } from '../../data/quotesData';
 const Dropdown: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
-	const data: PersonalDetails | undefined = useAppSelector(state => state.quote.data?.personalDetails);
+	const data: PersonalDetails | undefined = useAppSelector(
+		(state) => state.quote.data?.personalDetails
+	);
 
+	console.log(data);
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
@@ -36,12 +39,16 @@ const Dropdown: React.FC = () => {
 				aria-expanded={isOpen}
 				aria-haspopup="true"
 			>
-				<div className="mr-2 w-10 h-10 md:w-6 md:h-6 rounded-full bg-gray-200 overflow-hidden" >
-					<img alt={data?.fullName} src={data?.photo}/>
+				<div className="mr-2 w-10 h-10 md:w-6 md:h-6 rounded-full bg-gray-200 overflow-hidden">
+					<img alt={data?.fullName} src={data?.photo} />
 				</div>
-				<div className="mr-10 hidden md:block">{data?.fullName}</div>
+				<div className="mr-10 hidden md:block">
+					Boris Gevorgyan{data?.fullName}
+				</div>
 				<ArrowIcon
-					className={`w-4 h-4 !hidden md:block ${isOpen ? 'rotate-90' : 'rotate-270'}`}
+					className={`w-4 h-4 !hidden md:!block ${
+						isOpen ? 'rotate-90' : 'rotate-270'
+					}`}
 				/>
 			</button>
 		</div>
