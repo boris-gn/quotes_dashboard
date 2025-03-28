@@ -1,90 +1,188 @@
 {
-	"quotes": {
-		"personalDetails": {
-			"customerId": "CUST-34256",
-			"fullName": "Theresa Heidenreich",
-			"gender": "Male",
-			"photo": "src/assets/photos/photo.png",
-			"occupation": "Marketing Manager",
-			"contactInformation": {
-				"mobilePhone": "+1 123 456 7890",
-				"homePhone": "+1 123 456 7890",
-				"email": "Theresa@email.com",
-				"address": "6470 Koepp Street, South Hillary 72456-8817"
-			}
-		},
-		"policyInformation": {
-			"policyType": "Comprehensive Auto Insurance",
-			"policyDescription": "+1 123 456 7890",
-			"coverageAmount": "$50,000",
-			"deductible": "$500"
-		},
-		"customerHistory": [
-			{
-				"policyId": "P-20231011-002",
-				"type": "Health Insurance",
-				"status": "Active"
+	"quotes": [
+		{
+			"quoteId": "09876",
+			"personalDetails": {
+				"customerId": "CUST-34256",
+				"fullName": "Theresa Heidenreich",
+				"gender": "Female",
+				"occupation": "Marketing Manager",
+				"contactInformation": {
+					"mobilePhone": "+1 123 456 7890",
+					"homePhone": "+1 123 456 7890",
+					"email": "Theresa@email.com",
+					"address": "6470 Koepp Street, South Hillary 72456-8817"
+				}
 			},
-			{
-				"policyId": "P-20230905-001",
-				"type": "Home Insurance",
-				"status": "Expired"
-			}
-		],
-		"quoteStatus": "Pending Approval",
-		"quoteBreakdown": {
-			"premiumAmount": "$120 per month",
-			"annualPremium": "$1,400",
-			"discounts": [
-				{ "type": "Safe Driver Discount", "amount": "-$50" },
-				{ "type": "Multi-Policy Discount", "amount": "-$30" }
+			"policyInformation": {
+				"policyType": "Comprehensive Auto Insurance",
+				"policyDescription": "Provides full coverage including rental cars",
+				"coverageAmount": "$50,000",
+				"deductible": "$500"
+			},
+			"customerHistory": [
+				{
+					"policyId": "P-20231011-002",
+					"type": "Health Insurance",
+					"status": "Active"
+				},
+				{
+					"policyId": "P-20230905-001",
+					"type": "Home Insurance",
+					"status": "Expired"
+				}
 			],
-			"totalCharges": "$1,320",
-			"tax": "$20",
-			"finalPremium": "$1,340"
+			"quoteStatus": "Pending Approval",
+			"quoteBreakdown": {
+				"premiumAmount": "$120 per month",
+				"annualPremium": "$1,400",
+				"discounts": [
+					{ "type": "Safe Driver Discount", "amount": "-$50" },
+					{ "type": "Multi-Policy Discount", "amount": "-$30" }
+				],
+				"totalCharges": "$1,320",
+				"tax": "$20",
+				"finalPremium": "$1,340"
+			},
+			"expirationDates": {
+				"effectiveDate": "2024-10-15",
+				"expirationDate": "2025-10-14"
+			},
+			"supportingDocuments": [
+				{
+					"terms": "Auto Insurance Terms.pdf",
+					"proof": "Customer ID.pdf",
+					"reg": "Registration Document.pdf"
+				}
+			],
+			"activityLog": [
+				{
+					"date": "20-10-2023",
+					"description": "Requested quote update to add rental car coverage."
+				},
+				{
+					"date": "18-10-2023",
+					"description": "Broker followed up for confirmation."
+				},
+				{
+					"date": "15-10-2023",
+					"description": "Quote updated to 'Pending Approval.'"
+				}
+			]
 		},
-		"expirationDates": {
-			"effectiveDate": "2024-10-15",
-			"expirationDate": "2025-10-14"
+		{
+			"quoteId": "09875",
+			"personalDetails": {
+				"customerId": "CUST-17891",
+				"fullName": "Robert Willington",
+				"gender": "Male",
+				"occupation": "Software Engineer",
+				"contactInformation": {
+					"mobilePhone": "+1 987 654 3210",
+					"homePhone": "+1 987 654 3210",
+					"email": "robert@email.com",
+					"address": "123 Elm Street, Tech City, 90210"
+				}
+			},
+			"policyInformation": {
+				"policyType": "Term Life Insurance",
+				"policyDescription": "Covers life-related risks and provides financial stability",
+				"coverageAmount": "$100,000",
+				"deductible": "$800"
+			},
+			"customerHistory": [
+				{
+					"policyId": "P-20220705-001",
+					"type": "Auto Insurance",
+					"status": "Expired"
+				}
+			],
+			"quoteStatus": "Approved",
+			"quoteBreakdown": {
+				"premiumAmount": "$250 per month",
+				"annualPremium": "$3,000",
+				"discounts": [
+					{ "type": "Early Renewal Discount", "amount": "-$150" }
+				],
+				"totalCharges": "$2,850",
+				"tax": "$30",
+				"finalPremium": "$2,880"
+			},
+			"expirationDates": {
+				"effectiveDate": "2024-05-01",
+				"expirationDate": "2025-04-30"
+			},
+			"supportingDocuments": [
+				{
+					"terms": "Life Insurance Policy Terms.pdf",
+					"proof": "ID Proof.pdf"
+				}
+			],
+			"activityLog": [
+				{
+					"date": "10-04-2023",
+					"description": "Initial quote submitted for review."
+				},
+				{
+					"date": "12-04-2023",
+					"description": "Broker approved the quote and notified the client."
+				}
+			]
 		},
-		"supportingDocuments": [
-			"Auto Insurance Terms & Conditions.pdf",
-			"Customer ID Proof.pdf",
-			"Vehicle Registration Document.pdf"
-		],
-		"activityLog": [
-			{
-				"date": "20-10-2023",
-				"description": "Sarah Johnson requested a quote update for adding rental car coverage."
+		{
+			"quoteId": "09874",
+			"personalDetails": {
+				"customerId": "CUST-56789",
+				"fullName": "Sophia Martinez",
+				"gender": "Female",
+				"occupation": "Architect",
+				"contactInformation": {
+					"mobilePhone": "+1 456 789 0123",
+					"homePhone": "+1 456 789 0123",
+					"email": "sophia@email.com",
+					"address": "456 Pine Lane, Designville, 87654"
+				}
 			},
-			{
-				"date": "18-10-2023",
-				"description": "Broker sent a follow-up email for quote confirmation."
+			"policyInformation": {
+				"policyType": "Property Insurance",
+				"policyDescription": "Covers property damage and liability",
+				"coverageAmount": "$250,000",
+				"deductible": "$1,500"
 			},
-			{
-				"date": "16-10-2023",
-				"description": "Quote created and sent to Sarah Johnson."
+			"customerHistory": [
+				{
+					"policyId": "P-20231011-001",
+					"type": "Auto Insurance",
+					"status": "Active"
+				}
+			],
+			"quoteStatus": "Under Review",
+			"quoteBreakdown": {
+				"premiumAmount": "$300 per month",
+				"annualPremium": "$3,600",
+				"discounts": [
+					{ "type": "Loyalty Discount", "amount": "-$200" }
+				],
+				"totalCharges": "$3,400",
+				"tax": "$40",
+				"finalPremium": "$3,440"
 			},
-			{
-				"date": "15-10-2023",
-				"description": "Broker updated the quote status to 'Pending Approval.'"
+			"expirationDates": {
+				"effectiveDate": "2024-11-01",
+				"expirationDate": "2025-10-31"
 			},
-			{
-				"date": "14-10-2023",
-				"description": "Sarah Johnson's request for a quote was received via the company's website form."
-			},
-			{
-				"date": "13-10-2023",
-				"description": "Initial quote details entered into the system by Broker John Peterson."
-			},
-			{
-				"date": "12-10-2023",
-				"description": "System notified broker of Sarah Johnson's expired auto policy."
-			},
-			{
-				"date": "11-10-2023",
-				"description": "Sarah Johnson's health insurance policy successfully renewed."
-			}
-		]
-	}
+			"supportingDocuments": [
+				{
+					"terms": "Property Insurance Terms.pdf",
+					"proof": "Ownership Documents.pdf"
+				}
+			],
+			"activityLog": [
+				{
+					"date": "01-03-2023",
+					"description": "Customer requested a detailed breakdown of property insurance."
+				}
+			]
+		}
+	]
 }

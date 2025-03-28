@@ -39,7 +39,7 @@ const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = ({
 							Customer ID:
 						</span>
 						<span className="text-brand-primary text-xs">
-							{details.customerId}
+							{details?.customerId}
 						</span>
 					</div>
 					<div className="flex gap-2">
@@ -47,7 +47,7 @@ const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = ({
 							Full Name:
 						</span>
 						<span className="text-brand-primary text-xs">
-							{details.fullName}
+							{details?.fullName}
 						</span>
 					</div>
 					<div className="flex gap-2">
@@ -55,7 +55,7 @@ const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = ({
 							Gender:
 						</span>
 						<span className="text-brand-primary text-xs">
-							{details.gender}
+							{details?.gender}
 						</span>
 					</div>
 					<div className="flex gap-2">
@@ -63,7 +63,7 @@ const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = ({
 							Occupation:
 						</span>
 						<span className="text-brand-primary text-xs">
-							{details.occupation}
+							{details?.occupation}
 						</span>
 					</div>
 				</div>

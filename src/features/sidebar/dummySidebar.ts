@@ -30,7 +30,7 @@ export const sidebar: Sidebar[] = [
 		icon: PolicyIcon,
 		className: '[&>path]:stroke-white',
 		mobileClassName: '[&>path]:fill-gray-500',
-		url: '/policies',
+		url: '#',
 	},
 	{
 		id: 3,
@@ -38,7 +38,7 @@ export const sidebar: Sidebar[] = [
 		icon: ChartIcon,
 		className: '[&>*]:stroke-white',
 		mobileClassName: '[&>*]:fill-gray-500',
-		url: '/analytics',
+		url: '#',
 	},
 	{
 		id: 4,
@@ -46,7 +46,7 @@ export const sidebar: Sidebar[] = [
 		icon: UserGroupIcon,
 		className: '[&>*]:stroke-white',
 		mobileClassName: '[&>*]:fill-gray-500',
-		url: '/users',
+		url: '#',
 	},
 	{
 		id: 5,
@@ -54,6 +54,6 @@ export const sidebar: Sidebar[] = [
 		icon: SettingsIcon,
 		className: '[&>*]:stroke-white',
 		mobileClassName: '[&>*]:fill-gray-500',
-		url: '/settings',
+		url: '#',
 	},
 ];

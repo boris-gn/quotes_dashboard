@@ -3,7 +3,7 @@ import EditIcon from '../../assets/icons/edit.svg?react';
 import CardTitle from './CartTitle';
 
 interface QuoteStatusCardProps {
-	status: string;
+	status?: string;
 }
 
 const QuoteStatusCard: React.FC<QuoteStatusCardProps> = ({ status }) => {

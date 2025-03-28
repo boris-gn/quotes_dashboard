@@ -3,22 +3,30 @@ import { Quote } from '../features/quotes/types';
 import InsuranceTypeBadge from './InsuranceTypeBadge';
 import StatusBadge from './StatusBadge';
 import { QuoteActions } from './QuoteActions';
+import { useNavigate } from 'react-router-dom';
 
 interface QuoteRowProps {
-	quote: Quote; // Made optional to handle loading state
+	quote: Quote;
 	index: number;
-	loading?: boolean; // Added loading prop
+	loading?: boolean;
 }
 
 export const QuoteRow: React.FC<QuoteRowProps> = ({
 	quote,
 	loading = false,
 }) => {
+	const navigate = useNavigate();
+
+	const handleRowClick = () => {
+		navigate(`/quotes/${quote.id}`);
+	};
+
 	return (
 		<tr
 			className={`${
 				!loading && 'hover:bg-gray-10'
 			} bg-white items-center h-[40px]`}
+			onClick={handleRowClick}
 		>
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
@@ -27,7 +35,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 					<div>{quote?.id}</div>
 				)}
 			</td>
-
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-24 bg-gray-200 animate-pulse rounded"></div>
@@ -35,7 +42,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 					<div>{quote?.clientName}</div>
 				)}
 			</td>
-
 			<td>
 				{loading ? (
 					<div className="h-6 w-12 bg-gray-200 animate-pulse rounded-full"></div>
@@ -43,7 +49,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 					<InsuranceTypeBadge type={quote.type} />
 				)}
 			</td>
-
 			<td>
 				{loading ? (
 					<div className="h-6 w-12 bg-gray-200 animate-pulse rounded-full"></div>
@@ -51,7 +56,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 					<StatusBadge status={quote.status} />
 				)}
 			</td>
-
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
@@ -59,7 +63,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 					`$ ${quote?.premiumAmount.toFixed(2)}`
 				)}
 			</td>
-
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
@@ -67,7 +70,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 					quote?.expireDate
 				)}
 			</td>
-
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
@@ -75,7 +77,6 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 					quote?.lastUpdated
 				)}
 			</td>
-
 			<td>
 				{loading ? (
 					<div className="h-6 w-16 bg-gray-200 animate-pulse rounded"></div>

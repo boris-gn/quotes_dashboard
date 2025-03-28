@@ -22,21 +22,16 @@ const CustomerHistoryCard: React.FC<CustomerHistoryCardProps> = ({
 				</div>
 				{history?.map((historyItem) => {
 					return (
-						<div key={historyItem.policyId}>
-							<div className="flex">
-								<span className="text-brand-primary text-[10px]">
-									{historyItem.policyId}
-								</span>
-								<StatusBadge isFilled status="Active" />
-							</div>
+						<div
+							key={historyItem.policyId}
+							className="flex flex-col gap-2"
+						>
 							<div className="flex-col md:flex-row flex md:items-center">
 								<span className="text-brand-primary text-[10px]">
-									{historyItem.type}
+									Policy {historyItem.policyId}
+									{historyItem.type}:
 								</span>
-								<StatusBadge
-									isFilled
-									status={historyItem.status}
-								/>
+								<StatusBadge isFilled status="Active" />
 							</div>
 						</div>
 					);

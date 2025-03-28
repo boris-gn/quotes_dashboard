@@ -1,21 +1,29 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useFetchQuotes } from './hooks/useFetch';
-import { setQuotes } from './store/slices/quoteSlice';
+import { setQuotesList } from './store/slices/quoteSlice';
 import Header from './components/Header';
 import EnhancedSidebar from './components/sidebar/Sidebar';
 import { useAppDispatch } from './hooks/useRedux';
 import './App.css';
 import MobileSidebarContainer from './components/sidebar/MobileSidebar';
 import SearchInput from './components/SearchInput';
+import { useLocation } from 'react-router-dom';
 
 const App = () => {
+	const location = useLocation();
 	const dispatch = useAppDispatch();
 	const { data, isLoading } = useFetchQuotes();
+	const path =
+		location.pathname.slice(1).charAt(0).toUpperCase() +
+		location.pathname.slice(2);
+	const pageName =
+		location.pathname.split('/')[1]?.charAt(0).toUpperCase() +
+			location.pathname.split('/')[1]?.slice(1) || 'Home';
 
 	useEffect(() => {
 		if (data) {
-			dispatch(setQuotes(data));
+			dispatch(setQuotesList(data));
 		}
 	}, [data, dispatch]);
 
@@ -27,23 +35,24 @@ const App = () => {
 		<>
 			<div className="flex gap-4 h-screen w-full overflow-hidden">
 				<EnhancedSidebar className="hidden md:block w-fit !p-4" />
-
-				{/* Main Content */}
 				<div className="flex gap-4 flex-col overflow-hidden w-full">
 					<div className=" md:flex md:overflow-hidden md:justify-between md:relative fixed top-0 left-0 right-0 bg-white px-5 pt-5 pb-4">
-						<Header />
+						<Header pageName={pageName} path={path} />
 					</div>
 					<SearchInput className="md:mt-0 mt-14 md:hidden" />
 
+					{/* <div className="flex overflow-hidden justify-between">
+						
+					</div>
+					<SearchInput className="md:hidden" /> */}
 					<div className="md:hidden block">
 						<h1 className="text-24 text-brand-primary font-bold racking-minus-1 leading-117 mb-0.5">
-							Page name
+							{pageName}
 						</h1>
 						<p className="leading-115 text-12 text-gray-500 text-base font-normal tracking-normal">
 							Gallagher Insurance as Quotes
 						</p>
 					</div>
-
 					<div className="flex overflow-hidden">
 						<Outlet />
 					</div>

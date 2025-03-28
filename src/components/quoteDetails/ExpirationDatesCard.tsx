@@ -3,7 +3,7 @@ import CardTitle from './CartTitle';
 import { ExpirationDates } from '../../../data/quotesData';
 
 interface IExpirationDatesCard {
-	dates: ExpirationDates;
+	dates?: ExpirationDates;
 }
 
 const ExpirationDatesCard: React.FC<IExpirationDatesCard> = ({ dates }) => {
@@ -16,7 +16,7 @@ const ExpirationDatesCard: React.FC<IExpirationDatesCard> = ({ dates }) => {
 						Effective Date:
 					</span>
 					<span className="text-brand-primary text-xs pl-2.5">
-						{dates.effectiveDate}
+						{dates?.effectiveDate}
 					</span>
 				</div>
 				<div className="flex items-center">
@@ -24,7 +24,7 @@ const ExpirationDatesCard: React.FC<IExpirationDatesCard> = ({ dates }) => {
 						Expiration Date:
 					</span>
 					<span className="text-brand-primary text-xs  pl-2.5">
-						{dates.expirationDate}
+						{dates?.expirationDate}
 					</span>
 				</div>
 			</div>

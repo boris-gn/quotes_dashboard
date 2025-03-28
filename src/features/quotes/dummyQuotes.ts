@@ -2,7 +2,7 @@ import { Quote } from './types';
 
 export const quotes: Quote[] = [
 	{
-		id: '#09876',
+		id: '09876',
 		clientName: 'Theresa Heidenreich',
 		type: 'Life',
 		status: 'Pending',
@@ -11,7 +11,7 @@ export const quotes: Quote[] = [
 		lastUpdated: '23.10.2024',
 	},
 	{
-		id: '#09875',
+		id: '09875',
 		clientName: 'Elijah Block-Schaden',
 		type: 'Business',
 		status: 'Pending',
@@ -20,7 +20,7 @@ export const quotes: Quote[] = [
 		lastUpdated: '22.10.2024',
 	},
 	{
-		id: '#09874',
+		id: '09874',
 		clientName: 'Raul Padberg',
 		type: 'House',
 		status: 'Approved',
@@ -29,7 +29,7 @@ export const quotes: Quote[] = [
 		lastUpdated: '23.10.2024',
 	},
 	{
-		id: '#09873',
+		id: '09873',
 		clientName: 'Olive Grant',
 		type: 'Travel',
 		status: 'Expired',
@@ -38,7 +38,7 @@ export const quotes: Quote[] = [
 		lastUpdated: '12.06.2024',
 	},
 	{
-		id: '#09872',
+		id: '09872',
 		clientName: 'Jerome Mueller',
 		type: 'Vehicle',
 		status: 'Approved',
@@ -47,7 +47,7 @@ export const quotes: Quote[] = [
 		lastUpdated: '23.10.2024',
 	},
 	{
-		id: '#09871',
+		id: '09871',
 		clientName: 'Michelle Gerlach',
 		type: 'Life',
 		status: 'Pending',
@@ -56,7 +56,7 @@ export const quotes: Quote[] = [
 		lastUpdated: '23.10.2024',
 	},
 	{
-		id: '#09870',
+		id: '09870',
 		clientName: 'Randolph Gleichner',
 		type: 'Life',
 		status: 'Rejected',

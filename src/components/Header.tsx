@@ -1,17 +1,21 @@
 import IconButton from './IconButton';
 import Dropdown from './Dropdown';
 import BellIcon from '../assets/icons/bell.svg?react';
+import Breadcrumb from './Breadctumb';
 
-const Header = () => {
+const Header: React.FC<{ pageName: string; path: string }> = ({
+	pageName,
+	path,
+}) => {
 	return (
 		<>
-			<div className='hidden md:block'>
+			<div className="hidden md:block">
 				<h1 className="text-48 text-brand-primary font-bold racking-minus-1 leading-117">
-					Page name
+					{!pageName ? 'Home' : pageName}
 				</h1>
-				<p className="leading-115 text-gray-500 text-base font-normal tracking-normal">
-					Breadcrumb
-				</p>
+				<div className="leading-115 text-gray-500 text-base font-normal tracking-normal">
+					<Breadcrumb pathName={path} />
+				</div>
 			</div>
 			<div className="w-full md:w-auto flex flex-row-reverse md:flex-row md:justify-end justify-between gap-3 ">
 				<IconButton
@@ -21,7 +25,6 @@ const Header = () => {
 				/>
 				<Dropdown />
 			</div>
-			
 		</>
 	);
 };

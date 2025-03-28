@@ -2,8 +2,8 @@ import React from 'react';
 import CardTitle from './CartTitle';
 import { ActivityLog } from '../../../data/quotesData';
 
-interface IActivityLogCard {
-	activityLog: ActivityLog[];
+export interface IActivityLogCard {
+	activityLog?: ActivityLog[];
 }
 
 const ActivityLogCard: React.FC<IActivityLogCard> = ({ activityLog }) => {
@@ -11,7 +11,7 @@ const ActivityLogCard: React.FC<IActivityLogCard> = ({ activityLog }) => {
 		<div className="bg-white relative">
 			<CardTitle title="Activity Log" />
 			<div className="relative pl-4 text-left max-w-[200px]">
-				{activityLog.map((log, index) => (
+				{activityLog?.map((log, index) => (
 					<div
 						key={index}
 						className="relative pl-2 pb-3 border-l border-neutral-200"

@@ -3,12 +3,14 @@ import { IQuotesData } from '../../../data/quotesData';
 
 interface QuoteState {
 	data: IQuotesData | null;
+	list: IQuotesData[];
 	isLoading: boolean;
 	error: string | null;
 }
 
 const initialState: QuoteState = {
 	data: null,
+	list: [],
 	isLoading: false,
 	error: null,
 };
@@ -30,8 +32,15 @@ const quotesSlice = createSlice({
 			state.isLoading = false;
 			state.error = null;
 		},
+
+		setQuotesList: (state, action: PayloadAction<IQuotesData[]>) => {
+			state.list = action.payload;
+			state.isLoading = false;
+			state.error = null;
+		},
 	},
 });
 
-export const { setLoading, setError, setQuotes } = quotesSlice.actions;
+export const { setLoading, setError, setQuotes, setQuotesList } =
+	quotesSlice.actions;
 export default quotesSlice.reducer;

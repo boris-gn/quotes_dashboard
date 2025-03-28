@@ -4,7 +4,7 @@ import CardTitle from './CartTitle';
 import { SupportingDocuments } from '../../../data/quotesData';
 
 interface ISupportingDocumentsCard {
-	docs: SupportingDocuments;
+	docs?: SupportingDocuments[];
 }
 
 const SupportingDocumentsCard: React.FC<ISupportingDocumentsCard> = ({
@@ -13,27 +13,28 @@ const SupportingDocumentsCard: React.FC<ISupportingDocumentsCard> = ({
 	return (
 		<div className="bg-white ">
 			<CardTitle title="Supporting Documents" />
-
-			<div className="space-y-2 pl-3">
-				<div className="flex items-center">
-					<span className="text-brand-primary text-xs underline">
-						{docs.terms}
-					</span>
-					<DownloadIcon className="text-brand-primary pl-1" />
+			{docs?.map((doc, i) => (
+				<div key={i} className="space-y-2 pl-3">
+					<div className="flex items-center">
+						<span className="text-brand-primary text-xs underline">
+							{doc.terms}
+						</span>
+						<DownloadIcon className="text-brand-primary pl-1" />
+					</div>
+					<div className="flex items-center">
+						<span className="text-brand-primary text-xs underline">
+							{doc.proof}
+						</span>
+						<DownloadIcon className="text-brand-primary pl-1" />
+					</div>
+					<div className="flex items-center">
+						<span className="text-brand-primary text-xs underline">
+							{doc.reg}
+						</span>
+						<DownloadIcon className="text-brand-primary pl-1" />
+					</div>
 				</div>
-				<div className="flex items-center">
-					<span className="text-brand-primary text-xs underline">
-						{docs.proof}
-					</span>
-					<DownloadIcon className="text-brand-primary pl-1" />
-				</div>
-				<div className="flex items-center">
-					<span className="text-brand-primary text-xs underline">
-						{docs.reg}
-					</span>
-					<DownloadIcon className="text-brand-primary pl-1" />
-				</div>
-			</div>
+			))}
 		</div>
 	);
 };
