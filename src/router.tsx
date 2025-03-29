@@ -3,13 +3,13 @@ import App from './App';
 import Home from './pages/Home';
 import Quotes from './pages/Quotes';
 import QuotesDetails from './pages/QuotesDetail';
+import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,
-		//  TODO
-		// errorElement: ,
+		errorElement: <ErrorPage />,
 		children: [
 			{
 				path: '/',

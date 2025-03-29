@@ -1,14 +1,9 @@
 import withContainer from './Container';
+import CustomCalendar from './Calendar';
 
 const CalendarContainer: React.FC = () => {
-
-	return (
-		<div className=''>
-			Calendar
-		</div>
-	);
+	return <CustomCalendar />;
 };
 
 const QuotesCalendarContainer = withContainer(CalendarContainer);
 export default QuotesCalendarContainer;
-

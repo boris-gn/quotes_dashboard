@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import quoteReducer from './slices/quoteSlice';
+import eventReducer from './slices/eventsSlice';
 
 export const store = configureStore({
 	reducer: {
 		quote: quoteReducer,
+		event: eventReducer,
 	},
 });
 

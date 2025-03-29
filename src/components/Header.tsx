@@ -13,7 +13,7 @@ const Header: React.FC<{ pageName: string; path: string }> = ({
 				<h1 className="text-48 text-brand-primary font-bold racking-minus-1 leading-117">
 					{!pageName ? 'Home' : pageName}
 				</h1>
-				<div className="leading-115 text-gray-500 text-base font-normal tracking-normal">
+				<div className="leading-115 text-gray-500 text-base font-normal tracking-normal mb-3">
 					<Breadcrumb pathName={path} />
 				</div>
 			</div>

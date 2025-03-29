@@ -9,6 +9,7 @@ import MobileSidebarContainer from './components/sidebar/MobileSidebar';
 import SearchInput from './components/SearchInput';
 import { useLocation } from 'react-router-dom';
 import Breadcrumb from './components/Breadcrumb';
+import LoadingSpinner from './components/LoadingSpinner';
 import './App.css';
 
 const App = () => {
@@ -29,7 +30,7 @@ const App = () => {
 	}, [data, dispatch]);
 
 	if (isLoading) {
-		return <div>Loading...</div>;
+		return <LoadingSpinner />;
 	}
 
 	return (
