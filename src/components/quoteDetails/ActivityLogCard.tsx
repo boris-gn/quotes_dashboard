@@ -1,6 +1,6 @@
 import React from 'react';
 import CardTitle from './CartTitle';
-import { ActivityLog } from '../../../data/quotesData';
+import { ActivityLog } from '../../../data/QuoteTypes';
 
 export interface IActivityLogCard {
 	activityLog?: ActivityLog[];

@@ -1,6 +1,6 @@
 import React from 'react';
 import CardTitle from './CartTitle';
-import { QuoteBreakdown } from '../../../data/quotesData';
+import { QuoteBreakdown } from '../../../data/QuoteTypes';
 
 interface IQuoteBreakdownCard {
 	breakdown?: QuoteBreakdown;

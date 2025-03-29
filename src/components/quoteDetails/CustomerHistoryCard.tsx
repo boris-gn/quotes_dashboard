@@ -1,7 +1,7 @@
 import React from 'react';
 import CardTitle from './CartTitle';
 import StatusBadge from '../StatusBadge';
-import { CustomerHistory } from '../../../data/quotesData';
+import { CustomerHistory } from '../../../data/QuoteTypes';
 
 type CustomerHistoryCardProps = {
 	history?: CustomerHistory[];

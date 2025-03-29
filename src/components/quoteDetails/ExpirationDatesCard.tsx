@@ -1,6 +1,6 @@
 import React from 'react';
 import CardTitle from './CartTitle';
-import { ExpirationDates } from '../../../data/quotesData';
+import { ExpirationDates } from '../../../data/QuoteTypes';
 
 interface IExpirationDatesCard {
 	dates?: ExpirationDates;

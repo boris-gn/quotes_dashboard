@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IQuotesData } from '../../../data/quotesData';
+import { IQuotesData } from '../../../data/QuoteTypes';
 
 interface QuoteState {
 	data: IQuotesData | null;

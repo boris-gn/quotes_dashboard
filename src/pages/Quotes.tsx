@@ -1,9 +1,12 @@
 import EnhancedQuotesTable from '../components/QuotesTable';
 import QuotesCalendarContainer from '../components/CalendarContainer';
 import QuotesChartContainer from '../components/ChartContainer';
-import { quotes } from '../features/quotes/dummyQuotes';
+import { useAppSelector } from '../hooks/useRedux';
+import { RootState } from '../store/store';
 
 const Quotes = () => {
+	const quotes = useAppSelector((state: RootState) => state.quote.list);
+
 	return (
 		<div className="overflow-x-auto w-full">
 			<div className="flex flex-col md:flex-row gap-4 mb-4">

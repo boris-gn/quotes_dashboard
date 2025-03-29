@@ -45,6 +45,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ pathName }) => {
 
 		return (
 			<span key={path}>
+				X Insurance {' > '}
 				{index > 0 && ' > '}
 				<Link to={path} className="text-gray-500 hover:underline">
 					{displayName}

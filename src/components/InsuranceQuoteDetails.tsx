@@ -1,4 +1,3 @@
-import React from 'react';
 import PersonalDetailsCard from './quoteDetails/PersonalDetailsCard';
 import ContactInformationCard from './quoteDetails/ContactInformationCard';
 import PolicyInformationCard from './quoteDetails/PolicyInformationCard';

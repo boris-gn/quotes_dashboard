@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import ArrowIcon from '../assets/icons/arrow-left.svg?react';
 import { useAppSelector } from '../hooks/useRedux';
-import { PersonalDetails } from '../../data/quotesData';
+import { PersonalDetails } from '../../data/QuoteTypes';
 
 const Dropdown: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);

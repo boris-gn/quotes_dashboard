@@ -37,15 +37,17 @@ const bgColors = {
 };
 
 const StatusBadge: FC<InsuranceTypeBadgeProps> = ({ status, isFilled }) => {
+	const bgColor = bgColors[status as keyof typeof bgColors];
+
 	return (
 		<div
 			className={`flex mx-2 items-center justify-start gap-1 px-2 py-0.5 rounded-100 w-20 ${
-				bgColors[status][isFilled ? 'opacity' : 'bg']
+				bgColor[isFilled ? 'opacity' : 'bg']
 			}`}
 		>
 			<div
 				className={`w-3 h-3 rounded-full ${
-					isFilled ? bgColors[status].bg : 'bg-white '
+					isFilled ? bgColor.bg : 'bg-white '
 				}`}
 			/>
 			<span className="text-10 text-white font-bold leading-116">

@@ -1,7 +1,7 @@
 import React from 'react';
 import EditIcon from '../../assets/icons/edit.svg?react';
 import CardTitle from './CartTitle';
-import { ContactInformation } from '../../../data/quotesData';
+import { ContactInformation } from '../../../data/QuoteTypes';
 
 type PersonalDetailsCardProps = {
 	details?: {

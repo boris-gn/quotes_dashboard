@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Quote } from '../features/quotes/types';
+import { useEffect, useState } from 'react';
 import { QuoteHeader } from './quotesTable/QuoteTableHeader';
 import { QuoteColumnHeaders } from './quotesTable/QuoteColumnHeaders';
 import { QuoteRow } from './quotesTable/QuoteTableRow';
@@ -7,33 +6,50 @@ import { QuotePagination } from './quotesTable/QuotePagination';
 import TableSingleItem from './quotesTable/TableSingleItem';
 import withContainer from './Container';
 
+import { IQuotesData } from '../../data/QuoteTypes';
+
 interface QuotesTableProps {
-	quotes: Quote[];
+	quotes: IQuotesData[];
 	loading?: boolean;
 }
 
 const QuotesTable: React.FC<QuotesTableProps> = ({ quotes, loading }) => {
+	const [isLoading, setLoading] = useState(true);
 	const [currentPage, setCurrentPage] = useState(1);
-	const itemsPerPage = 6;
+	const itemsPerPage = 7;
 
 	const paginatedQuotes = quotes?.slice(
 		(currentPage - 1) * itemsPerPage,
 		currentPage * itemsPerPage
 	);
 
+	useEffect(() => {
+		setTimeout(() => {
+			setLoading(false);
+		}, 3000);
+	}, [loading]);
+
 	return (
 		<>
 			<QuoteHeader title="Quotes" />
 			<div className="block md:hidden border-b border-gray-100 absolute left-0 right-0" />
-			<TableSingleItem className="mt-8 md:hidden block" />
+			{paginatedQuotes.map((quote, index) => (
+				<TableSingleItem
+					className="mt-8 md:hidden block"
+					loading={isLoading}
+					key={quote.quoteId}
+					quote={quote}
+					index={index}
+				/>
+			))}
 			<div className="hidden md:block overflow-x-auto pb-1.5">
 				<table className="w-full !border-separate !border-spacing-y-3">
 					<QuoteColumnHeaders />
 					<tbody>
 						{paginatedQuotes?.map((quote, index) => (
 							<QuoteRow
-								loading={loading}
-								key={quote.id}
+								loading={isLoading}
+								key={quote.quoteId}
 								quote={quote}
 								index={index}
 							/>

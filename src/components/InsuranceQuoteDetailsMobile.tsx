@@ -11,8 +11,8 @@ import ActivityLogCard from './quoteDetails/ActivityLogCard';
 import withContainer from './Container';
 import ActionButtons from './quoteDetails/ActionButtons';
 import { useAppSelector } from '../hooks/useRedux';
-import { ActivityLog } from '../../data/quotesData';
-import { IQuotesData } from '../../data/quotesData';
+import { ActivityLog } from '../../data/QuoteTypes';
+import { IQuotesData } from '../../data/QuoteTypes';
 
 import Edit from '../assets/icons/edit.svg?react';
 import Follow from '../assets/icons/node-add.svg?react';

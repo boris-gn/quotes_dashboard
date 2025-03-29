@@ -1,24 +1,20 @@
-import React from 'react';
-import { Quote } from '../../features/quotes/types';
 import InsuranceTypeBadge from '../InsuranceTypeBadge';
 import StatusBadge from '../StatusBadge';
 import { QuoteActions } from '../QuoteActions';
 import { useNavigate } from 'react-router-dom';
+import { IQuotesData, InsuranceType } from '../../../data/QuoteTypes';
 
 interface QuoteRowProps {
-	quote: Quote;
+	quote: IQuotesData;
 	index: number;
 	loading?: boolean;
 }
 
-export const QuoteRow: React.FC<QuoteRowProps> = ({
-	quote,
-	loading = false,
-}) => {
+export const QuoteRow: React.FC<QuoteRowProps> = ({ quote, loading }) => {
 	const navigate = useNavigate();
 
-	const handleRowClick = () => {
-		navigate(`/quotes/${quote.id}`);
+	const onHandleClick = () => {
+		navigate(`/quotes/${quote.quoteId}`);
 	};
 
 	return (
@@ -26,62 +22,61 @@ export const QuoteRow: React.FC<QuoteRowProps> = ({
 			className={`${
 				!loading && 'hover:bg-gray-10'
 			} bg-white items-center h-[40px]`}
-			onClick={handleRowClick}
 		>
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
 				) : (
-					<div>{quote?.id}</div>
+					<div>#{quote?.quoteId}</div>
 				)}
 			</td>
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-24 bg-gray-200 animate-pulse rounded"></div>
 				) : (
-					<div>{quote?.clientName}</div>
+					<div>{quote?.personalDetails.fullName}</div>
 				)}
 			</td>
 			<td>
 				{loading ? (
 					<div className="h-6 w-12 bg-gray-200 animate-pulse rounded-full"></div>
 				) : (
-					<InsuranceTypeBadge type={quote.type} />
+					<InsuranceTypeBadge type={quote.type as InsuranceType} />
 				)}
 			</td>
 			<td>
 				{loading ? (
 					<div className="h-6 w-12 bg-gray-200 animate-pulse rounded-full"></div>
 				) : (
-					<StatusBadge status={quote.status} />
+					<StatusBadge status={quote.quoteStatus} />
 				)}
 			</td>
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
 				) : (
-					`$ ${quote?.premiumAmount.toFixed(2)}`
+					`${quote?.quoteBreakdown.premiumAmount}`
 				)}
 			</td>
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
 				) : (
-					quote?.expireDate
+					quote?.expirationDates.expirationDate
 				)}
 			</td>
 			<td className="text-14 px-2 text-gray-500 leading-[1.43] text-left font-normal">
 				{loading ? (
 					<div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
 				) : (
-					quote?.lastUpdated
+					quote?.expirationDates.effectiveDate
 				)}
 			</td>
 			<td>
 				{loading ? (
 					<div className="h-6 w-16 bg-gray-200 animate-pulse rounded"></div>
 				) : (
-					<QuoteActions />
+					<QuoteActions onActionClick={onHandleClick} />
 				)}
 			</td>
 		</tr>

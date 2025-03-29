@@ -1,5 +1,3 @@
-export type QuoteAction = 'send' | 'edit' | 'view';
-
 export interface Sidebar {
 	id: number;
 	label: string;

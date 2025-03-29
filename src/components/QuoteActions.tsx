@@ -1,9 +1,9 @@
 import IconButton from './IconButton';
-import { QuoteAction } from '../features/quotes/types';
 import MailIcon from '../assets/icons/mail.svg?react';
 import EditIcon from '../assets/icons/edit.svg?react';
 import ViewIcon from '../assets/icons/view.svg?react';
 
+export type QuoteAction = 'send' | 'edit' | 'view';
 interface QuoteActionsProps {
 	actions?: QuoteAction[];
 	onActionClick?: (action: QuoteAction) => void;

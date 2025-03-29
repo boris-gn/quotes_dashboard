@@ -20,7 +20,11 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
-		"noUncheckedSideEffectImports": true
-	},
-	"include": ["src", "data/quotesData.ts"]
+		"noUncheckedSideEffectImports": true,
+
+		"baseUrl": "src",
+		"paths": {
+			"@/*": ["*"]
+		}
+	}
 }

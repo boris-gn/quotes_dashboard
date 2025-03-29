@@ -5,10 +5,11 @@ import { setQuotesList } from './store/slices/quoteSlice';
 import Header from './components/Header';
 import EnhancedSidebar from './components/sidebar/Sidebar';
 import { useAppDispatch } from './hooks/useRedux';
-import './App.css';
 import MobileSidebarContainer from './components/sidebar/MobileSidebar';
 import SearchInput from './components/SearchInput';
 import { useLocation } from 'react-router-dom';
+import Breadcrumb from './components/Breadcrumb';
+import './App.css';
 
 const App = () => {
 	const location = useLocation();
@@ -44,6 +45,7 @@ const App = () => {
 						<h1 className="text-24 text-brand-primary font-bold racking-minus-1 leading-117 mb-0.5">
 							{pageName}
 						</h1>
+						<Breadcrumb pathName={path} />
 						<p className="leading-115 text-12 text-gray-500 text-base font-normal tracking-normal">
 							Gallagher Insurance as Quotes
 						</p>
